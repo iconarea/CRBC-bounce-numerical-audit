@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this numerical audit, please cite its Zenodo DOI."
-title: "CRBC Numerical Audit: Stability Gates, Exclusions, and Observational Requirements"
+title: "Numerical Verification of a Curvature-Bound Bounce Cosmology: Effective-Field-Theory Control Pushes the Transition Below the Planck Scale"
 type: software
 authors:
   - family-names: Kim
@@ -8,9 +8,6 @@ authors:
     affiliation: "Independent Researcher, Seoul, Republic of Korea"
     email: iconarea@gmail.com
 license: CC-BY-4.0
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.21813685
 keywords:
   - bounce cosmology
   - beyond-Horndeski

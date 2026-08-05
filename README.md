@@ -1,19 +1,19 @@
-# CRBC Numerical Audit
+# Curvature-Bound Bounce Cosmology: Numerical Verification
 
 Reproducibility package for:
 
-> **Numerical Audit of a Phenomenological Curvature-Bound Bounce Ansatz:
-> Stability Gates, Exclusions, and Observational Requirements**
+> **Numerical Verification of a Curvature-Bound Bounce Cosmology:
+> Effective-Field-Theory Control Pushes the Transition Below the Planck Scale**
 
 Author: Ho Hyung Kim, Independent Researcher, Seoul, Republic of Korea.
 
-Latest archived preprint (v1.1): [10.5281/zenodo.21813685](https://doi.org/10.5281/zenodo.21813685)
+Latest archived preprint: see the repository release and Zenodo DOI linked below.
 
 ## Scope
 
-This is a numerical audit of a phenomenological bounce ansatz. It is **not** a
-validated quantum-gravity theory, a derivation of a CRBC-specific covariant
-action, or an analysis of observed CMB maps.
+This is a numerical verification of selected consequences of a phenomenological
+bounce ansatz. It is **not** a validated quantum-gravity theory, a derivation
+of a CRBC-specific covariant action, or an analysis of observed CMB maps.
 
 The package documents:
 
@@ -36,12 +36,15 @@ The package documents:
 4. Run a blinded, likelihood-based analysis of actual CMB maps after completing
   realistic foreground, mask, and polarization validation.
 
-## Revision 2026-08-06
+## Revision 2026-08-06 — sub-Planck transition scale
 
-The revised string-scale cutoff test rejects a controlled bounce at the direct
-Hagedorn/string-density identification: \(\max(E_{\rm char}/\Lambda)=0.519\)
-exceeds the declared 0.1 criterion. The gate passes only when the bounce density
-is set four orders of magnitude below the assumed Hagedorn density. See
+The direct Hagedorn/string-density identification is rejected by the declared
+EFT-control gate: \(\max(E_{\rm char}/\Lambda)=0.519\), above the 0.1
+criterion. Control requires \(\rho_H/\rho_c>725\); at \(10^4\), the
+independent CPU check gives 0.05188 with no gate violations. Consequently,
+the dimensionless curvature-bound coefficient is not assumed to be unity:
+the manuscript derives \(\eta=\mathcal K_{\max}\ell_P^4\sim10^{-16}\)--\(10^{-6}\).
+The transition is therefore six to sixteen orders below Planck curvature. See
 [Korean revision record](REVISION_2026-08-06_kr.md) and
 [English revision record](REVISION_2026-08-06_en.md).
 
@@ -71,5 +74,5 @@ is from [Planck 2018 X](https://arxiv.org/abs/1807.06211).
 
 ## Citation and license
 
-This release is licensed under [CC BY 4.0](LICENSE). Cite the latest version,
-[10.5281/zenodo.21813685](https://doi.org/10.5281/zenodo.21813685).
+This release is licensed under [CC BY 4.0](LICENSE). Cite the latest Zenodo
+version shown in this repository's release metadata.

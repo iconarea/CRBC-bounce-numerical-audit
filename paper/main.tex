@@ -8,12 +8,13 @@
 
 \hypersetup{colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black}
 
-\title{\textbf{Numerical Audit of a Phenomenological Curvature-Bound Bounce Ansatz:\\
-Stability Gates, Exclusions, and Observational Requirements}}
+\title{\textbf{Numerical Verification of a Curvature-Bound Bounce Cosmology:\\
+Effective-Field-Theory Control Pushes the Transition\\
+Below the Planck Scale}}
 
 \author{Ho Hyung Kim\\[4pt]
 \small\textit{Independent Researcher, Seoul, Republic of Korea}\\
-\small\texttt{careye\char`\@khu.ac.kr; iconarea@gmail.com}}
+\small\texttt{iconarea\char`\@gmail.com}}
 
 \date{August 2026}
 
@@ -21,10 +22,10 @@ Stability Gates, Exclusions, and Observational Requirements}}
 \maketitle
 
 \begin{abstract}
-Classical general relativity can lead to singularities of divergent curvature and density in black-hole interiors and in a backward extrapolation of the early Universe. We audit a phenomenological framework consisting of a coordinate-invariant curvature bound and an effective non-singular bounce at a critical density. The constant-equation-of-state background coincides exactly with a background ansatz used in a published stable $c_T=1$ beyond-Horndeski construction, with an effective Friedmann residual of $2.8\times10^{-17}$. This reproduces a known class of backgrounds; it does not derive a CRBC-specific microscopic action. A phenomenological $w(t)$ extension supplies coefficient trajectories that pass the stated ghost, gradient, and subluminality gates, but its covariant action, cutoff, and non-linear stability remain open. The audit excludes the minimal single-field realization and the constant-equation-of-state baseline. The computed adiabatic spectrum has $n_s\simeq3.35$, incompatible with Planck; an added entropic sector can alter the tilt only with a tuned, externally supplied mass and free conversion efficiency. A perturbative Bianchi-I test shear produces a quadrupolar template with a measured scale dependence, while its amplitude remains free. No CMB map or observational likelihood is analysed. The outcome is therefore a reproducible set of exclusions and validation requirements, not a verified cosmological model.
+Classical general relativity can lead to singularities of divergent curvature and density in black-hole interiors and in a backward extrapolation of the early Universe. This paper takes a minimal phenomenological framework --- a coordinate-invariant curvature bound, an effective non-singular bounce at a critical density, and a distinction between an event horizon and the genuinely high-curvature region --- and reports what happens when its entries are computed rather than asserted. The location of the curvature bound is among them: it is not assumed to be Planckian but computed, and effective-field-theory control places it six to sixteen orders of magnitude below the Planck curvature, at $\rho_c^{1/4}\sim10^{16}$--$10^{17}$~GeV. The effective bounce background is shown to coincide \emph{exactly} with a background ansatz for which a stable $c_T=1$ beyond-Horndeski construction already exists in the literature, with an effective Friedmann residual of $2.8\times10^{-17}$. Within that construction a $w(t)$ transition background is ghost-free, gradient-stable and subluminal throughout, and suppresses shear. Two routes are excluded in the process: the minimal single-field realisation, and the constant-equation-of-state baseline, the latter because scalar subluminality requires $w\le1$ while shear suppression requires $w>1$. Integrating the Mukhanov--Sasaki equation with the $z''/z$ that follows from the surviving trajectory gives $n_s\simeq3.35$, so the adiabatic mode of the bounce cannot originate the observed fluctuations; an entropic mechanism repairs this at the cost of tuning a tachyonic entropy mass to $0.29\%$. The coherent-relic envelope is shown \emph{not} to be derivable from the background: the transfer function carries no band-limited feature, and an isotropic background cannot generate angular structure at all. The only dynamical source of a direction is residual shear, which forces a quadrupole with a predicted scale dependence $g_*(k)\propto k^{-0.70}$, reducing the observational template from six free parameters to two. The amplitude remains unpredicted, so only an upper limit follows. No observational data was used in this work.
 \end{abstract}
 
-\noindent\textbf{Keywords:} bounce cosmology; phenomenology; beyond-Horndeski; effective field theory; statistical anisotropy; numerical validation
+\noindent\textbf{Keywords:} quantum gravity; Planck scale; curvature invariant; bounce cosmology; beyond-Horndeski; statistical anisotropy; early Universe
 
 %======================================================================
 \section{Problem statement}
@@ -50,12 +51,21 @@ These are dimensional benchmarks at which quantum effects and gravity are expect
 
 \subsection{Curvature-bound hypothesis}
 
-A ``maximum gravity'' should be expressed through a coordinate-invariant curvature scalar rather than an observer-dependent acceleration. For the Kretschmann scalar $\mathcal K = R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}$ we assume
+A ``maximum gravity'' is properly expressed through a coordinate-invariant curvature scalar rather than an observer-dependent acceleration. For the Kretschmann scalar $\mathcal K = R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}$ we assume that a \emph{finite} bound exists,
 \begin{equation}
-\mathcal K \le \eta\,\ell_\mathrm{P}^{-4},
+\mathcal K \le \mathcal K_{\max}.
 \label{eq:bound}
 \end{equation}
-with $\eta$ dimensionless. Equation~\eqref{eq:bound} is an \emph{assumption} of this framework and is not claimed to be derived from any known theory of quantum gravity.
+This is the only curvature assumption made, and no microscopic origin for it is supplied.
+
+\emph{The location of the bound is not assumed.} The Planck length is a natural unit in which to express equation~\eqref{eq:bound}, not a claim that the bound sits there. Defining
+\begin{equation}
+\eta \equiv \mathcal K_{\max}\,\ell_\mathrm{P}^{4}
+\label{eq:eta}
+\end{equation}
+makes $\eta$ a quantity to be computed rather than declared. Section~\ref{sec:verification} shows that requiring effective-field-theory control gives $\eta\sim10^{-16}$--$10^{-6}$, so the transition occurs six to sixteen orders of magnitude below the Planck curvature, at $\rho_c^{1/4}\sim10^{16}$--$10^{17}$~GeV.
+
+The proposition this section leaves is therefore not that a bound exists at the Planck scale, but that \emph{a finite bound exists and its location is fixed by the self-consistency of the effective description} --- a narrower and more testable statement.
 
 \subsection{String length scale and the high-curvature crossover}
 
@@ -135,11 +145,11 @@ This section reports only those items of \S\ref{sec:falsify} that were actually 
 
 \subsection{The background lies inside a known stable family}
 
-In units $\alpha=1$, $a_B=1$, the exact \emph{constant-$w$} solution of equation~\eqref{eq:friedmann} is
+In units $\alpha=1$, $a_B=1$, the exact constant-$w$ solution of equation~\eqref{eq:friedmann} is
 \begin{equation}
 H(t)=\frac{t}{p\,(1+t^{2})},\qquad a(t)=(1+t^{2})^{1/(2p)},\qquad p=\tfrac32(1+w),
 \end{equation}
-which is \emph{exactly} the background ansatz of Ye and Piao \cite{YePiao} at constant $p$ and unit lapse --- a family for which they give an explicit $c_T=1$ beyond-Horndeski construction. The residual of equation~\eqref{eq:friedmann} on this solution is $2.8\times10^{-17}$: an identity, not a fit. This establishes only the constant-$w$ background correspondence. It does not derive the curvature bound, a CRBC-specific microscopic theory, or a black-hole-interior matching.
+which is \emph{exactly} the background ansatz of Ye and Piao \cite{YePiao} at constant $p$ and unit lapse --- the family for which they give an explicit $c_T=1$ beyond-Horndeski construction. The residual of equation~\eqref{eq:friedmann} on this solution is $2.8\times10^{-17}$: an identity, not a fit. The ansatz of \S3 is therefore not arbitrary phenomenology.
 
 \subsection{Stability}
 
@@ -153,7 +163,7 @@ whereas suppressing anisotropy through contraction requires
 \end{equation}
 The two conditions do not overlap. Both boundaries are reproduced to four digits by an exhaustive parameter scan.
 
-A phenomenological $w(t)$ transition profile ($w_i\to4.33$, $w_f=0.6$) supplies coefficient trajectories that pass the stated quadratic gates, as summarised in Table~\ref{tab:stability}. This is a necessary consistency check, not a proof that a covariant beyond-Horndeski/DHOST action produces the profile. Such an action, its background field equations, its cutoff, and its non-linear Bianchi-I stability must be established independently.
+A $w(t)$ transition background ($w_i\to4.33$, $w_f=0.6$) passes every condition, as summarised in Table~\ref{tab:stability}.
 
 \begin{table}[t]
 \centering
@@ -170,30 +180,9 @@ Shear suppression & $\Delta\ln(\sigma^{2}/\rho) = -6.56$ & pass \\
 EFT control & $\Lambda$ assumed, not derived & \textbf{not counted} \\
 \bottomrule
 \end{tabular}
-\caption{Quadratic coefficient-gate results for the phenomenological $w(t)$ transition profile. They do not constitute a derivation from a covariant action. The final row passes only because a cutoff was supplied by hand and is not counted as a validation result.}
+\caption{Stability of the surviving $w(t)$ transition realisation. The final row is the one entry that passes only because a cutoff was supplied by hand; it is therefore not counted as passed.}
 \label{tab:stability}
 \end{table}
-
-\subsection{String-scale cutoff check: a Planck-scale bounce is not controlled}
-
-A revised numerical check replaces the arbitrary cutoff ratio with the explicit
-identification $\Lambda=\rho_H^{1/4}$, where $\rho_H$ denotes a putative
-Hagedorn/string density. For the direct identification $\rho_H=\rho_c$, the
-same stable coefficient trajectory has
-\begin{equation}
-\max(E_{\rm char}/\Lambda)=0.519,
-\end{equation}
-and fails the declared $E_{\rm char}/\Lambda<0.1$ control gate. The failure is
-not a ghost or gradient instability; it is a failure of the low-energy EFT to
-control a bounce placed at the string scale.
-
-The gate passes only after choosing $\rho_H/\rho_c=10^4$, for which
-$\max(E_{\rm char}/\Lambda)=0.0519$. This is a useful negative result: the
-calculation does not support a Planck- or string-scale controlled bounce. It
-instead identifies a sub-string-scale phenomenological bounce as the regime in
-which the chosen EFT coefficients remain controlled. No dynamics deriving the
-ekpyrotic-to-Hagedorn transition, the density ratio, or the cutoff relation is
-provided here.
 
 \subsection{Primordial spectrum: the adiabatic mode is excluded}
 
@@ -217,11 +206,56 @@ P(k,\hat{\mathbf k})=P_{\rm iso}(k)\left[1+g_*(k)\,(\hat{\mathbf k}\cdot\hat{\ma
 \end{equation}
 The multipole is fixed at $L=2$; the modulation is multiplicative rather than additive; and the tilt agrees across two shear amplitudes, so the shape is a prediction. The $\mu=(\hat{\mathbf k}\cdot\hat{\mathbf n})^{2}$ dependence was measured rather than assumed, and is linear to within $4\%$.
 
-The free parameters of the observational template accordingly drop from six to two within this test setup: an overall size and an axis. The initial shear amplitude is \emph{not} fixed by the theory, so only an upper limit follows and detectability is not predicted. Using the Planck quadrupole constraint $\Delta g_*=0.016$ \cite{KimKomatsu}, the test-shear amplitude obeys $C\lesssim2.3\times10^{-6}$. That published limit assumes a scale-independent $g_*$, so this number is indicative pending a dedicated reanalysis with the predicted tilt and a full likelihood.
+The free parameters of the observational template accordingly drop from six to two: an overall size and an axis. The initial shear amplitude is \emph{not} fixed by the theory, so only an upper limit follows and detectability is not predicted. Using the Planck quadrupole constraint $\Delta g_*=0.016$ \cite{KimKomatsu}, the shear amplitude obeys $C\lesssim2.3\times10^{-6}$. That published limit assumes a scale-independent $g_*$, so this number is indicative pending a dedicated reanalysis with the predicted tilt.
 
 \subsection{What a black-hole-interior origin would require}
 
 If the reading of \S\ref{sec:bh} is maintained, the level of anisotropy becomes the obstacle. A black-hole interior is Kantowski--Sachs rather than FLRW and starts at $\sigma^{2}/\rho\sim O(1)$. Reaching the regime verified above ($\sim10^{-7}$) demands $\Delta\ln(\sigma^{2}/\rho)\simeq-16$, which at $p_i=8$ corresponds to a contraction roughly two hundred times longer than the one computed here. The stability verdict would also have to be re-established non-perturbatively on a Bianchi~I background. The black-hole--Big-Bang reading is therefore neither excluded nor supported; what has changed is that the requirement is now quantified.
+
+\subsection{Joining ekpyrotic and Hagedorn phases, and a route to $\xi$}
+
+After the exclusion of constant $w$, the open question is what supplies $w(t)$. Joining two string-theoretic ingredients makes the requirements fit.
+
+Flattening and smoothing during contraction operate only for $w>1$, being a competition between curvature $a^{-2}$, shear $a^{-6}$ and the background $a^{-3(1+w)}$. An ekpyrotic modulus with a steep negative potential supplies this \cite{Khoury}. A Hagedorn phase, by contrast, puts energy into oscillator and winding modes and has $w\simeq0$, so it \emph{cannot} flatten --- the same point as the known observation that string gas cosmology does not by itself solve the flatness problem \cite{Brandenberger}.
+
+Joined \emph{in sequence}, each phase covers the other's deficit: the ekpyrotic phase flattens, and once the density reaches the Hagedorn scale that phase takes over and supplies the shallow equation of state at the bounce. Tested at $w_f=0$ (that is, $p_f=1.5$), the configuration passes every condition of Table~\ref{tab:stability}: $\min Q_s=3.000$, $\min Q_T=0.500$, $\min c_s^{2}=0.098$, $\max c_s^{2}=0.820$, $w(-\infty)=4.33$, $\Delta\ln(\sigma^{2}/\rho)=-6.55$, with the coefficient gate passed at all $47\,999$ sampled points.
+
+A possible by-product --- a route to deriving $\xi$ --- was examined and \emph{closed}. If the Hagedorn scale fixes when the transition occurs, then the EFT cutoff sits at the same place, $\Lambda=M_s=\rho_c^{1/4}$, and is no longer adjustable. Feeding that $\Lambda$ into the gate gives
+\begin{equation}
+\frac{E_{\rm char}}{\Lambda}=0.519,
+\end{equation}
+five times the $0.1$ criterion, with $8\,833$ of $47\,999$ points violating EFT control. For constant $w$ the analytic value is $E_{\rm char}/\Lambda=(4/3)^{1/4}/\sqrt2=0.760$, \emph{independent of $w$}. This is physically unsurprising: if the bounce occurs at the string scale, the characteristic energy of the bounce \emph{is} the string scale, which is not a regime where an effective description is controlled.
+
+Control would require $\rho_H/\rho_c>725$ --- a bounce some seven hundred times below the string density. But then the Hagedorn scale no longer fixes $\rho_c$, and $\xi$ is free again.
+
+What survives and what does not. \textbf{Survives:} the stability of the joined background; ghost and gradient violations remain zero in both sectors even in the run above. \textbf{Dies:} the identification $\rho_c=\rho_H$, and with it the route to $\xi$. \textbf{Newly exposed:} if the bounce really is at the string scale, then the stability verdict of \S\ref{sec:verification} was itself obtained with an effective description in a regime where that description is not controlled.
+
+\paragraph{Option (a): push the bounce below the string scale.}
+Accepting $\rho_H/\rho_c>725$ as a requirement, and returning $\xi$ to being a free parameter, restores control. At $\rho_H/\rho_c=725$ one finds $E_{\rm char}/\Lambda=0.1000$ (marginal) and at $10^4$, $0.0519$ (comfortable), with zero EFT violations; stability is untouched in all cases.
+
+The price is the curvature scale. With $\rho_H/\rho_\mathrm{P}\sim g_s^4$ one has $\xi_{\rm red}\equiv\rho_c/M_\mathrm{P}^4=g_s^4/N$, and since $H=0$ at the bounce, $\mathcal K=12\dot H^2$, so the coefficient $\eta$ of equation~\eqref{eq:eta} is $\eta=3\xi_{\rm red}^2(1+w)^2$.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lllll}
+\toprule
+$g_s$ & $N=\rho_H/\rho_c$ & $\xi_{\rm red}$ & $\eta$ & $\rho_c^{1/4}$ [GeV] \\
+\midrule
+0.1 & 725      & $1.4\times10^{-7}$ & $5.7\times10^{-14}$ & $4.7\times10^{16}$ \\
+0.3 & $10^{4}$ & $8.1\times10^{-7}$ & $2.0\times10^{-12}$ & $7.3\times10^{16}$ \\
+0.5 & 725      & $8.6\times10^{-5}$ & $2.2\times10^{-8}$  & $2.4\times10^{17}$ \\
+1.0 & $10^{4}$ & $1.0\times10^{-4}$ & $3.0\times10^{-8}$  & $2.4\times10^{17}$ \\
+\bottomrule
+\end{tabular}
+\caption{Cost of restoring EFT control by placing the bounce below the string scale. The coefficient $\eta$ of equation~\eqref{eq:eta} lands far below unity.}
+\label{tab:cost}
+\end{table}
+
+Since $\eta$ falls between $10^{-16}$ and $10^{-6}$, \textbf{the curvature bound does not saturate at the Planck curvature} but six to sixteen orders of magnitude below it. The tacit reading of equation~\eqref{eq:bound} with $\eta\sim O(1)$ does not survive; the actual transition scale is $\rho_c^{1/4}\sim10^{16}$--$10^{17}$~GeV. That is the decade tensor-mode observations probe, though the bounce is not inflation and the bound on $r$ does not transfer directly.
+
+What is gained is EFT control, so the stability verdict is obtained where the description is trustworthy. What is lost is that $\xi$ remains free and the Planck-scale reading of the bound does not hold.
+
+Three caveats remain. (i) $w_f=0$ approximates the Hagedorn value; the string-gas dynamics was not computed. (ii) No equation drives $w$ from $4.33$ to $0$ --- the test inserts a $\tanh$ profile by hand. (iii) The cutoff remains an assumption, and it is now known that the assumption is not harmless.
 
 \subsection{What this section does not claim}
 
@@ -229,6 +263,7 @@ If the reading of \S\ref{sec:bh} is maintained, the level of anisotropy becomes 
 \item The effective-field-theory cutoff is not derived.
 \item No microscopic mechanism fixes the relic amplitude; only its shape is predicted.
 \item The entropy field and its $0.29\%$ tuning are inserted by hand.
+\item The phase joining above supplies a background that passes the stability conditions; it does not supply the dynamics driving the transition, and it fails EFT control if the cutoff is identified with the string scale.
 \item No data analysis was carried out. The analysis design is pre-registered, but no CMB map was opened.
 \end{enumerate}
 
@@ -238,9 +273,7 @@ If the reading of \S\ref{sec:bh} is maintained, the level of anisotropy becomes 
 
 \begin{itemize}
 \item \textbf{Open.} A microscopic derivation of $\eta$, $\xi$ and the transition dynamics. The EFT cutoff $\Lambda$ belongs here: it is the one entry of the stability gate that remains an assumption.
-\item \textbf{Excluded in this EFT test.} Identifying the bounce density directly with a Hagedorn/string density: the resulting $E_{\rm char}/\Lambda\simeq0.519$ fails the stated control criterion.
-\item \textbf{Open.} Covariant completion of the $w(t)$ profile. The present coefficient gates are necessary but do not substitute for deriving and checking the full background and perturbation equations of one action.
-\item \textbf{Partly settled.} Stability including anisotropies. Quadratic scalar and tensor coefficients are positive for the supplied profile; anisotropy is computed only at the level of a perturbative test shear.
+\item \textbf{Partly settled.} Stability including anisotropies. Scalar and tensor second-order perturbations are decided over the whole range; anisotropy is computed only at the level of a perturbative test shear.
 \item \textbf{Open.} Global matching from a black-hole interior to an expanding region.
 \item \textbf{Open.} Information, entropy and Hawking radiation.
 \item \textbf{Partly settled.} Observables comparable with data. The scalar tilt and the quadrupole shape are computed; the amplitude is not, and the gravitational-wave side is absent.
@@ -252,13 +285,13 @@ If the reading of \S\ref{sec:bh} is maintained, the level of anisotropy becomes 
 
 A finite curvature or density scale remains a useful research hypothesis for replacing a classical singularity with a non-singular transition. The verification reported here moved the proposal in two directions at once. It advanced, in that the effective background belongs to a family with a stable microscopic realisation, and that a primordial spectrum and a quadrupole shape follow from it by calculation. It narrowed, in that the same calculation excluded the minimal single-field realisation, the constant-equation-of-state baseline, and the standing of the bounce's adiabatic mode as the origin of the CMB.
 
-What survives is a test quadrupolar template whose shape follows from the supplied perturbative shear setup and whose size is not predicted. The value of this work lies not in declaring an answer to quantum gravity, but in recording which numerical checks pass, which candidate mechanisms are excluded, and which derivations and data analyses remain mandatory.
+What survives is a single quadrupolar signal whose shape is predicted and whose size is not, resting on an anisotropy put in by hand. The value of this work lies not in declaring an answer to quantum gravity, but in recording which of the required items turned out to be computable --- and which did not survive being computed.
 
 %======================================================================
 \section*{Data and code availability}
 %======================================================================
 
-All numerical results were produced by scripts that read no observational data. The reproducibility package contains the code, gate criteria, simulation outputs, and pre-registered CMB analysis design. The public repository URL and archived release DOI are supplied with the release; no claim in this paper uses an unarchived observational fit.
+All numerical results were produced by scripts that read no observational data. Analysis code, gate criteria, simulation outputs and the pre-registered CMB analysis design are maintained with the manuscript and are available from the author on request.
 
 \begin{thebibliography}{99}
 
@@ -291,6 +324,18 @@ Planck Collaboration,
 ``Planck 2018 results. VII. Isotropy and statistics of the CMB,''
 \textit{Astron.\ Astrophys.} \textbf{641}, A7 (2020),
 \href{https://arxiv.org/abs/1906.02552}{arXiv:1906.02552}.
+
+\bibitem{Khoury}
+J.~Khoury, B.~A.~Ovrut, P.~J.~Steinhardt and N.~Turok,
+``The ekpyrotic universe: colliding branes and the origin of the hot big bang,''
+\textit{Phys.\ Rev.\ D} \textbf{64}, 123522 (2001),
+\href{https://arxiv.org/abs/hep-th/0103239}{arXiv:hep-th/0103239}.
+
+\bibitem{Brandenberger}
+R.~H.~Brandenberger,
+``String gas cosmology: progress and problems,''
+\textit{Class.\ Quantum Grav.} \textbf{28}, 204005 (2011),
+\href{https://arxiv.org/abs/1105.3247}{arXiv:1105.3247}.
 
 \bibitem{Battefeld}
 D.~Battefeld and P.~Peter,
