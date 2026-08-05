@@ -1,0 +1,108 @@
+{
+  "construction": "Ye & Piao (2019) c_T=1 beyond-Horndeski construction, arXiv:1901.02202, with the CRBC baseline background of 결맞은_잔재_바운스_우주론_연구명세_kr.md §2 substituted.",
+  "background_identity": "H = t/(p(1+t^2)), a = (1+t^2)^{1/(2p)}, p = 3(1+w)/2 at alpha=1 is exactly the CRBC effective Friedmann solution and exactly the Ye-Piao ansatz with constant p, N=1.",
+  "denominator_ambiguity": "N = 1 makes the two surviving readings of Eq. (13) identical; the realization does not inherit that ambiguity.",
+  "device": "cuda",
+  "scan": {
+    "candidates": 31185,
+    "viable_stable": 2673,
+    "viable_stable_fraction": 0.08571428571428572,
+    "viable_subluminal": 373,
+    "viable_subluminal_fraction": 0.011960878627545295,
+    "selection_criterion": "subluminal",
+    "best_margin": 0.09799163810392346,
+    "best_parameters": {
+      "k1": 10.0,
+      "k2": 5.0,
+      "tau1": 0.5,
+      "tau2_sq": 1.08
+    },
+    "analytic_subluminality_bounds": {
+      "c_s_sq_plus_infinity": "p/3 <= 1 requires w <= 1",
+      "c_s_sq_minus_infinity": "p/(3+k1) <= 1 requires k1 >= p - 3"
+    }
+  },
+  "selected": {
+    "parameters": {
+      "k1": 10.0,
+      "k2": 5.0,
+      "tau1": 0.5,
+      "tau2_sq": 1.08
+    },
+    "grid": {
+      "points": 48001,
+      "extent": 40.0,
+      "step": 0.0016666666666651508
+    },
+    "background": {
+      "w": 1.0,
+      "p": 8.0,
+      "varying_p": true,
+      "p_initial": 8.0,
+      "p_final": 1.5,
+      "max_friedmann_residual": null,
+      "reconstructed_equation_of_state": {
+        "branch_points": {
+          "past": -0.9466666666666642,
+          "future": 1.3649999999999975
+        },
+        "max_rho_over_rhoc": 1.0,
+        "w_at_bounce": -0.10637272894260696,
+        "w_asymptotic_past": 4.329751584941159,
+        "w_min_contracting_reliable": -0.9816159940249063,
+        "w_max_contracting_reliable": 4.330467976848922,
+        "ekpyrotic_asymptotic_past": true,
+        "excluded_near_branch_points": 1397,
+        "caveat": "w is a 0/0 at the branch points r = 1/2; points with |1-2r| <= 0.05 are excluded."
+      },
+      "shear_budget": {
+        "ln_shear_over_background_change_past_to_bounce": -6.5523022155393384,
+        "shear_suppressed_through_contraction": true,
+        "e_folds_of_shear_growth": 0.0,
+        "note": "negative means the background outpaces shear; requires w > 1 for constant w"
+      },
+      "min_scale_factor": 1.0,
+      "bounce_H": -3.8238249545169397e-16
+    },
+    "analytic_checks": {
+      "M_cal_at_bounce": -1.2500000000000047,
+      "M_cal_at_bounce_expected": -1.25,
+      "c_s_sq_plus_infinity": 0.4996093770878765,
+      "c_s_sq_plus_infinity_expected": 0.5,
+      "c_s_sq_minus_infinity": 0.6149038486578423,
+      "c_s_sq_minus_infinity_expected": 0.6153846153846154
+    },
+    "stability": {
+      "min_U": 6.0,
+      "min_c_s_sq": 0.09796842234882887,
+      "eta_at_min_c_s_sq": -0.029999999999997435,
+      "min_Q_T": 0.5,
+      "min_Q_s": 3.0,
+      "ghost_free": true,
+      "gradient_stable": true,
+      "max_c_s_sq": 0.8202121464799165,
+      "superluminal_points": 0,
+      "subluminal": true
+    },
+    "eft_cutoff": {
+      "mode": "string-scale",
+      "critical_density_code_units": 0.3333333333333333,
+      "rho_H_over_rho_c": 10000.0,
+      "string_scale_rho_c_quarter": 7.598356856515926,
+      "e_char_over_string_scale": 0.051883807045568366,
+      "max_characteristic_energy": 0.3942316810068437,
+      "assumed_ratio_cutoff_over_e_char": 20.0,
+      "assumed_cutoff": 7.598356856515926,
+      "status": "Lambda = rho_c^(1/4), fixed by the Hagedorn identification, not adjustable"
+    },
+    "npz": "/tmp/claude-1000/-home-careye/7e798bb4-39a3-480a-bdde-4039d0e94d52/scratchpad/N10000.npz"
+  },
+  "cpu_cross_check": {
+    "min_c_s_sq": 0.09796842234882076,
+    "same_gradient_verdict": true,
+    "abs_min_c_s_sq_difference": 8.104628079763643e-15
+  },
+  "scope": "Background-level realization and stability gate input. Not a CMB prediction; the coherent-relic template of the CRBC spec is a separate, later step.",
+  "gpu_name": "NVIDIA RTX A2000 12GB",
+  "peak_allocated_mb": 944.7138671875
+}

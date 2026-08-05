@@ -1,0 +1,39 @@
+{
+  "input": "outputs/crbc_string_scale_cutoff_trajectory.npz",
+  "device": "cuda",
+  "gpu": {
+    "positive_scale_factor_violations": 0,
+    "scalar_no_ghost_violations": 0,
+    "scalar_no_gradient_instability_violations": 0,
+    "tensor_no_ghost_violations": 0,
+    "tensor_no_gradient_instability_violations": 0,
+    "eft_control_violations": 8833,
+    "points": 47999,
+    "all_points_valid": false,
+    "first_invalid_index": 21424,
+    "min_q_s": 3.0,
+    "min_c_s_sq": 0.09796842234882887,
+    "min_q_t": 0.5,
+    "min_c_t_sq": 1.0,
+    "max_energy_cutoff_ratio": 0.5188380704556836
+  },
+  "cpu_reference": {
+    "positive_scale_factor_violations": 0,
+    "scalar_no_ghost_violations": 0,
+    "scalar_no_gradient_instability_violations": 0,
+    "tensor_no_ghost_violations": 0,
+    "tensor_no_gradient_instability_violations": 0,
+    "eft_control_violations": 8833,
+    "points": 47999,
+    "all_points_valid": false,
+    "first_invalid_index": 21424,
+    "min_q_s": 3.0,
+    "min_c_s_sq": 0.09796842234882887,
+    "min_q_t": 0.5,
+    "min_c_t_sq": 1.0,
+    "max_energy_cutoff_ratio": 0.5188380704556836
+  },
+  "cpu_gpu_same_verdict": true,
+  "gpu_name": "NVIDIA RTX A2000 12GB",
+  "peak_allocated_mb": 4.39599609375
+}

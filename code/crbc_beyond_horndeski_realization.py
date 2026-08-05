@@ -89,6 +89,22 @@ def parse_args() -> argparse.Namespace:
         help="require 0 < c_s^2 <= 1 everywhere when selecting the candidate",
     )
     parser.add_argument(
+        "--cutoff-mode",
+        choices=("assumed-ratio", "string-scale"),
+        default="assumed-ratio",
+        help="how the EFT cutoff is set. 'assumed-ratio' multiplies E_char by a chosen factor "
+        "and is therefore circular; 'string-scale' sets Lambda = rho_c^(1/4), which is what a "
+        "Hagedorn identification of the bounce density implies and is not adjustable",
+    )
+    parser.add_argument(
+        "--string-scale-over-rho-c",
+        type=float,
+        default=1.0,
+        help="rho_H / rho_c. 1.0 identifies the bounce density with the Hagedorn density, which "
+        "fails EFT control; larger values push the bounce below the string scale and are the "
+        "price of regaining control",
+    )
+    parser.add_argument(
         "--cutoff-over-e-char",
         type=float,
         default=20.0,
@@ -396,7 +412,13 @@ def finalize(
     hubble_dot = derivative(hubble, step)
     e_char = torch.sqrt(torch.maximum(hubble.square(), hubble_dot.abs()))[interior]
     e_char_max = float(e_char.max().item())
-    cutoff = args.cutoff_over_e_char * e_char_max
+    # rho_c in code units: 8 pi G = 1 and 8 pi G rho_c = 4/(3(1+w)^2)
+    critical_density = 4.0 / (3.0 * (1.0 + args.w) ** 2)
+    string_scale = (args.string_scale_over_rho_c * critical_density) ** 0.25
+    if args.cutoff_mode == "string-scale":
+        cutoff = string_scale
+    else:
+        cutoff = args.cutoff_over_e_char * e_char_max
 
     tail = eta_i > 0.8 * args.extent
     head = eta_i < -0.8 * args.extent
@@ -454,10 +476,17 @@ def finalize(
             "subluminal": bool((cs_i <= 1.0).all().item()),
         },
         "eft_cutoff": {
+            "mode": args.cutoff_mode,
+            "critical_density_code_units": critical_density,
+            "rho_H_over_rho_c": args.string_scale_over_rho_c,
+            "string_scale_rho_c_quarter": string_scale,
+            "e_char_over_string_scale": e_char_max / string_scale,
             "max_characteristic_energy": e_char_max,
             "assumed_ratio_cutoff_over_e_char": args.cutoff_over_e_char,
             "assumed_cutoff": cutoff,
-            "status": "assumption supplied to the gate, not derived from a microscopic theory",
+            "status": "Lambda = rho_c^(1/4), fixed by the Hagedorn identification, not adjustable"
+            if args.cutoff_mode == "string-scale"
+            else "assumption supplied to the gate, not derived from a microscopic theory",
         },
         "npz": str(args.npz_output),
     }

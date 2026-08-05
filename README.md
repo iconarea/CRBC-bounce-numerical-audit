@@ -34,7 +34,16 @@ The package documents:
 3. Supply reheating, amplitude normalization, and any black-hole-interior
    matching conditions.
 4. Run a blinded, likelihood-based analysis of actual CMB maps after completing
-   realistic foreground, mask, and polarization validation.
+  realistic foreground, mask, and polarization validation.
+
+## Revision 2026-08-06
+
+The revised string-scale cutoff test rejects a controlled bounce at the direct
+Hagedorn/string-density identification: \(\max(E_{\rm char}/\Lambda)=0.519\)
+exceeds the declared 0.1 criterion. The gate passes only when the bounce density
+is set four orders of magnitude below the assumed Hagedorn density. See
+[Korean revision record](REVISION_2026-08-06_kr.md) and
+[English revision record](REVISION_2026-08-06_en.md).
 
 ## Contents
 
