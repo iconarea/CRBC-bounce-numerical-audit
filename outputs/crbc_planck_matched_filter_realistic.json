@@ -1,0 +1,51 @@
+{
+  "estimator": "matched filter over (l, delta) with delta in [2, 4, 6, 8]",
+  "weights_trained_on": 80,
+  "training_note": "paired common-random-number realizations; training and evaluation sets are disjoint",
+  "covariance_approximation": "channels treated as independent; suboptimal but not biasing",
+  "configuration": {
+    "noise_uk_arcmin": 45.0,
+    "noise_anisotropy": 0.5,
+    "foreground_residual": 0.02,
+    "nside": 256,
+    "lmin": 2,
+    "lmax": 250,
+    "deltas": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "gate_realizations": 300,
+    "calibration_realizations_per_level": 80,
+    "injections": [
+      0.0,
+      0.5,
+      1.0
+    ]
+  },
+  "gate": {
+    "bias_first_half": -0.01223123849777881,
+    "bias_second_half": -0.014665595768909245,
+    "scatter": 0.020970539631501438,
+    "bias_over_scatter": 0.5832581665855341,
+    "stability_sigma": 1.005340363308437,
+    "closure_sigma": 1.5145293184908244,
+    "gate_passed": true
+  },
+  "calibration": {
+    "recovered_mean_per_injection": {
+      "0.0": -0.011970304736693072,
+      "0.5": 0.4768008755600677,
+      "1.0": 0.9674002846164743
+    },
+    "slope": 0.9786180241557833,
+    "slope_error": 0.008941206096645773
+  },
+  "sensitivity": {
+    "sigma_g0": 0.02142872817981452,
+    "reference_fill_delta2_only": 0.116,
+    "improvement_over_fill": 5.413293734775634
+  },
+  "verdict": "Matched filter passes the mask-coupling gate and has a measured response."
+}

@@ -1,0 +1,1645 @@
+{
+  "purpose": "fix the analysis configuration before looking at data",
+  "template": {
+    "form": "P(k, k_hat) = P_iso(k) [1 + g_*(k) (k_hat . n_hat)^2]",
+    "g_star": "g_0 (k/k_0)^tilt",
+    "tilt": -0.7,
+    "pivot_mpc_inverse": 0.05,
+    "source": "CRBC_EFT_선정과_계수계약_kr.md §11"
+  },
+  "fiducial_cosmology": {
+    "H0": 67.36,
+    "ombh2": 0.02237,
+    "omch2": 0.12,
+    "tau": 0.0544,
+    "As": 2.1e-09,
+    "ns": 0.9649
+  },
+  "normalization_checks": [
+    {
+      "ell": 2,
+      "ratio_to_camb": 0.9999092628172029
+    },
+    {
+      "ell": 10,
+      "ratio_to_camb": 0.999875539579337
+    },
+    {
+      "ell": 50,
+      "ratio_to_camb": 0.9992848870022648
+    },
+    {
+      "ell": 100,
+      "ratio_to_camb": 0.9990878371196229
+    }
+  ],
+  "worst_normalization_error": 0.0009121628803770987,
+  "instrument": {
+    "noise_uk_arcmin": 45.0,
+    "beam_arcmin": 5.0,
+    "f_sky": 0.78
+  },
+  "forecast": {
+    "sigma_g0_full_sky": 0.01541039245568101,
+    "sigma_g0_with_mask": 0.017448833464722747,
+    "lmax_used": 400,
+    "information_milestones": {
+      "ell_for_50pc_of_information": 237,
+      "ell_for_90pc_of_information": 324,
+      "ell_for_99pc_of_information": 370
+    },
+    "planck_published_sigma_g_star": 0.016,
+    "note": "the published 0.016 assumes scale-independent g_*; this forecast is for the CRBC tilt and is not directly comparable, which is why the reanalysis is needed"
+  },
+  "cumulative": [
+    {
+      "ell": 2,
+      "cumulative_sigma_g0_full_sky": 0.1998222326427689
+    },
+    {
+      "ell": 3,
+      "cumulative_sigma_g0_full_sky": 0.13200889909343114
+    },
+    {
+      "ell": 4,
+      "cumulative_sigma_g0_full_sky": 0.10501685450729739
+    },
+    {
+      "ell": 5,
+      "cumulative_sigma_g0_full_sky": 0.09056055685631292
+    },
+    {
+      "ell": 6,
+      "cumulative_sigma_g0_full_sky": 0.0816631606388479
+    },
+    {
+      "ell": 7,
+      "cumulative_sigma_g0_full_sky": 0.07572126756704839
+    },
+    {
+      "ell": 8,
+      "cumulative_sigma_g0_full_sky": 0.07153018256956858
+    },
+    {
+      "ell": 9,
+      "cumulative_sigma_g0_full_sky": 0.06845996403205883
+    },
+    {
+      "ell": 10,
+      "cumulative_sigma_g0_full_sky": 0.06614873966295295
+    },
+    {
+      "ell": 11,
+      "cumulative_sigma_g0_full_sky": 0.06437172608174747
+    },
+    {
+      "ell": 12,
+      "cumulative_sigma_g0_full_sky": 0.06298460029964355
+    },
+    {
+      "ell": 13,
+      "cumulative_sigma_g0_full_sky": 0.06189135858095878
+    },
+    {
+      "ell": 14,
+      "cumulative_sigma_g0_full_sky": 0.061024125252506826
+    },
+    {
+      "ell": 15,
+      "cumulative_sigma_g0_full_sky": 0.060332954138929876
+    },
+    {
+      "ell": 16,
+      "cumulative_sigma_g0_full_sky": 0.05980502915724532
+    },
+    {
+      "ell": 17,
+      "cumulative_sigma_g0_full_sky": 0.05936874749014212
+    },
+    {
+      "ell": 18,
+      "cumulative_sigma_g0_full_sky": 0.05901820672132294
+    },
+    {
+      "ell": 19,
+      "cumulative_sigma_g0_full_sky": 0.05874059939371752
+    },
+    {
+      "ell": 20,
+      "cumulative_sigma_g0_full_sky": 0.058522846490426175
+    },
+    {
+      "ell": 21,
+      "cumulative_sigma_g0_full_sky": 0.05835393398191097
+    },
+    {
+      "ell": 22,
+      "cumulative_sigma_g0_full_sky": 0.05822472219191094
+    },
+    {
+      "ell": 23,
+      "cumulative_sigma_g0_full_sky": 0.0581275923824574
+    },
+    {
+      "ell": 24,
+      "cumulative_sigma_g0_full_sky": 0.05805616417424418
+    },
+    {
+      "ell": 25,
+      "cumulative_sigma_g0_full_sky": 0.0580050879207312
+    },
+    {
+      "ell": 26,
+      "cumulative_sigma_g0_full_sky": 0.05796987093492098
+    },
+    {
+      "ell": 27,
+      "cumulative_sigma_g0_full_sky": 0.05794674997490383
+    },
+    {
+      "ell": 28,
+      "cumulative_sigma_g0_full_sky": 0.05793258946210951
+    },
+    {
+      "ell": 29,
+      "cumulative_sigma_g0_full_sky": 0.05792478500855678
+    },
+    {
+      "ell": 30,
+      "cumulative_sigma_g0_full_sky": 0.057921189126813134
+    },
+    {
+      "ell": 31,
+      "cumulative_sigma_g0_full_sky": 0.05792004974299925
+    },
+    {
+      "ell": 32,
+      "cumulative_sigma_g0_full_sky": 0.05791995723736352
+    },
+    {
+      "ell": 33,
+      "cumulative_sigma_g0_full_sky": 0.057919800438609094
+    },
+    {
+      "ell": 34,
+      "cumulative_sigma_g0_full_sky": 0.057918727013092274
+    },
+    {
+      "ell": 35,
+      "cumulative_sigma_g0_full_sky": 0.05791610737257634
+    },
+    {
+      "ell": 36,
+      "cumulative_sigma_g0_full_sky": 0.05791150334117073
+    },
+    {
+      "ell": 37,
+      "cumulative_sigma_g0_full_sky": 0.05790463935864274
+    },
+    {
+      "ell": 38,
+      "cumulative_sigma_g0_full_sky": 0.057895375319950745
+    },
+    {
+      "ell": 39,
+      "cumulative_sigma_g0_full_sky": 0.05788368773111913
+    },
+    {
+      "ell": 40,
+      "cumulative_sigma_g0_full_sky": 0.05786964553744302
+    },
+    {
+      "ell": 41,
+      "cumulative_sigma_g0_full_sky": 0.0578533933401223
+    },
+    {
+      "ell": 42,
+      "cumulative_sigma_g0_full_sky": 0.05783512935354867
+    },
+    {
+      "ell": 43,
+      "cumulative_sigma_g0_full_sky": 0.05781509898832231
+    },
+    {
+      "ell": 44,
+      "cumulative_sigma_g0_full_sky": 0.05779357816185837
+    },
+    {
+      "ell": 45,
+      "cumulative_sigma_g0_full_sky": 0.05777086471544475
+    },
+    {
+      "ell": 46,
+      "cumulative_sigma_g0_full_sky": 0.05774726633724219
+    },
+    {
+      "ell": 47,
+      "cumulative_sigma_g0_full_sky": 0.057723097856160706
+    },
+    {
+      "ell": 48,
+      "cumulative_sigma_g0_full_sky": 0.057698668999477475
+    },
+    {
+      "ell": 49,
+      "cumulative_sigma_g0_full_sky": 0.057674279055488165
+    },
+    {
+      "ell": 50,
+      "cumulative_sigma_g0_full_sky": 0.057650209808871165
+    },
+    {
+      "ell": 51,
+      "cumulative_sigma_g0_full_sky": 0.057626723604138105
+    },
+    {
+      "ell": 52,
+      "cumulative_sigma_g0_full_sky": 0.0576040629183768
+    },
+    {
+      "ell": 53,
+      "cumulative_sigma_g0_full_sky": 0.0575824433834377
+    },
+    {
+      "ell": 54,
+      "cumulative_sigma_g0_full_sky": 0.05756205251367053
+    },
+    {
+      "ell": 55,
+      "cumulative_sigma_g0_full_sky": 0.05754304672243484
+    },
+    {
+      "ell": 56,
+      "cumulative_sigma_g0_full_sky": 0.05752555572396158
+    },
+    {
+      "ell": 57,
+      "cumulative_sigma_g0_full_sky": 0.05750967547681426
+    },
+    {
+      "ell": 58,
+      "cumulative_sigma_g0_full_sky": 0.05749547426669012
+    },
+    {
+      "ell": 59,
+      "cumulative_sigma_g0_full_sky": 0.05748298440536029
+    },
+    {
+      "ell": 60,
+      "cumulative_sigma_g0_full_sky": 0.057472210058237466
+    },
+    {
+      "ell": 61,
+      "cumulative_sigma_g0_full_sky": 0.057463121771666965
+    },
+    {
+      "ell": 62,
+      "cumulative_sigma_g0_full_sky": 0.057455662451903686
+    },
+    {
+      "ell": 63,
+      "cumulative_sigma_g0_full_sky": 0.057449741486660245
+    },
+    {
+      "ell": 64,
+      "cumulative_sigma_g0_full_sky": 0.05744524070267462
+    },
+    {
+      "ell": 65,
+      "cumulative_sigma_g0_full_sky": 0.057442012081845274
+    },
+    {
+      "ell": 66,
+      "cumulative_sigma_g0_full_sky": 0.05743988088067044
+    },
+    {
+      "ell": 67,
+      "cumulative_sigma_g0_full_sky": 0.05743864621586836
+    },
+    {
+      "ell": 68,
+      "cumulative_sigma_g0_full_sky": 0.05743808131990067
+    },
+    {
+      "ell": 69,
+      "cumulative_sigma_g0_full_sky": 0.057437935819101595
+    },
+    {
+      "ell": 70,
+      "cumulative_sigma_g0_full_sky": 0.05743793581531891
+    },
+    {
+      "ell": 71,
+      "cumulative_sigma_g0_full_sky": 0.057437786024399376
+    },
+    {
+      "ell": 72,
+      "cumulative_sigma_g0_full_sky": 0.05743717137004441
+    },
+    {
+      "ell": 73,
+      "cumulative_sigma_g0_full_sky": 0.057435756950972694
+    },
+    {
+      "ell": 74,
+      "cumulative_sigma_g0_full_sky": 0.057433192869652726
+    },
+    {
+      "ell": 75,
+      "cumulative_sigma_g0_full_sky": 0.057429111002512634
+    },
+    {
+      "ell": 76,
+      "cumulative_sigma_g0_full_sky": 0.05742313226100613
+    },
+    {
+      "ell": 77,
+      "cumulative_sigma_g0_full_sky": 0.05741486302550973
+    },
+    {
+      "ell": 78,
+      "cumulative_sigma_g0_full_sky": 0.05740390162375384
+    },
+    {
+      "ell": 79,
+      "cumulative_sigma_g0_full_sky": 0.05738983698551934
+    },
+    {
+      "ell": 80,
+      "cumulative_sigma_g0_full_sky": 0.057372251851441056
+    },
+    {
+      "ell": 81,
+      "cumulative_sigma_g0_full_sky": 0.05735072815114264
+    },
+    {
+      "ell": 82,
+      "cumulative_sigma_g0_full_sky": 0.057324839172888026
+    },
+    {
+      "ell": 83,
+      "cumulative_sigma_g0_full_sky": 0.05729416838990383
+    },
+    {
+      "ell": 84,
+      "cumulative_sigma_g0_full_sky": 0.0572582894447949
+    },
+    {
+      "ell": 85,
+      "cumulative_sigma_g0_full_sky": 0.05721679507307149
+    },
+    {
+      "ell": 86,
+      "cumulative_sigma_g0_full_sky": 0.057169270420338855
+    },
+    {
+      "ell": 87,
+      "cumulative_sigma_g0_full_sky": 0.05711532449181954
+    },
+    {
+      "ell": 88,
+      "cumulative_sigma_g0_full_sky": 0.05705456664186596
+    },
+    {
+      "ell": 89,
+      "cumulative_sigma_g0_full_sky": 0.056986627247201875
+    },
+    {
+      "ell": 90,
+      "cumulative_sigma_g0_full_sky": 0.056911153140725035
+    },
+    {
+      "ell": 91,
+      "cumulative_sigma_g0_full_sky": 0.05682780285634748
+    },
+    {
+      "ell": 92,
+      "cumulative_sigma_g0_full_sky": 0.0567362713528753
+    },
+    {
+      "ell": 93,
+      "cumulative_sigma_g0_full_sky": 0.05663625240227934
+    },
+    {
+      "ell": 94,
+      "cumulative_sigma_g0_full_sky": 0.05652749520403666
+    },
+    {
+      "ell": 95,
+      "cumulative_sigma_g0_full_sky": 0.05640973944309173
+    },
+    {
+      "ell": 96,
+      "cumulative_sigma_g0_full_sky": 0.05628278935787542
+    },
+    {
+      "ell": 97,
+      "cumulative_sigma_g0_full_sky": 0.05614644686162346
+    },
+    {
+      "ell": 98,
+      "cumulative_sigma_g0_full_sky": 0.05600056917042092
+    },
+    {
+      "ell": 99,
+      "cumulative_sigma_g0_full_sky": 0.055845031117906445
+    },
+    {
+      "ell": 100,
+      "cumulative_sigma_g0_full_sky": 0.05567973938711138
+    },
+    {
+      "ell": 101,
+      "cumulative_sigma_g0_full_sky": 0.05550465164815732
+    },
+    {
+      "ell": 102,
+      "cumulative_sigma_g0_full_sky": 0.05531972365156591
+    },
+    {
+      "ell": 103,
+      "cumulative_sigma_g0_full_sky": 0.05512499263871312
+    },
+    {
+      "ell": 104,
+      "cumulative_sigma_g0_full_sky": 0.05492047232058772
+    },
+    {
+      "ell": 105,
+      "cumulative_sigma_g0_full_sky": 0.05470626827760013
+    },
+    {
+      "ell": 106,
+      "cumulative_sigma_g0_full_sky": 0.054482463324695606
+    },
+    {
+      "ell": 107,
+      "cumulative_sigma_g0_full_sky": 0.05424921227066442
+    },
+    {
+      "ell": 108,
+      "cumulative_sigma_g0_full_sky": 0.05400667807963707
+    },
+    {
+      "ell": 109,
+      "cumulative_sigma_g0_full_sky": 0.053755051899138526
+    },
+    {
+      "ell": 110,
+      "cumulative_sigma_g0_full_sky": 0.05349457600898358
+    },
+    {
+      "ell": 111,
+      "cumulative_sigma_g0_full_sky": 0.05322547291036795
+    },
+    {
+      "ell": 112,
+      "cumulative_sigma_g0_full_sky": 0.05294804779745386
+    },
+    {
+      "ell": 113,
+      "cumulative_sigma_g0_full_sky": 0.05266256338086301
+    },
+    {
+      "ell": 114,
+      "cumulative_sigma_g0_full_sky": 0.05236936086032757
+    },
+    {
+      "ell": 115,
+      "cumulative_sigma_g0_full_sky": 0.05206875599127318
+    },
+    {
+      "ell": 116,
+      "cumulative_sigma_g0_full_sky": 0.05176109693254507
+    },
+    {
+      "ell": 117,
+      "cumulative_sigma_g0_full_sky": 0.05144675993723056
+    },
+    {
+      "ell": 118,
+      "cumulative_sigma_g0_full_sky": 0.051126086212841315
+    },
+    {
+      "ell": 119,
+      "cumulative_sigma_g0_full_sky": 0.05079949895316233
+    },
+    {
+      "ell": 120,
+      "cumulative_sigma_g0_full_sky": 0.05046733668877778
+    },
+    {
+      "ell": 121,
+      "cumulative_sigma_g0_full_sky": 0.050130039666066016
+    },
+    {
+      "ell": 122,
+      "cumulative_sigma_g0_full_sky": 0.04978796416016651
+    },
+    {
+      "ell": 123,
+      "cumulative_sigma_g0_full_sky": 0.049441531361532474
+    },
+    {
+      "ell": 124,
+      "cumulative_sigma_g0_full_sky": 0.04909113043351453
+    },
+    {
+      "ell": 125,
+      "cumulative_sigma_g0_full_sky": 0.048737141777022264
+    },
+    {
+      "ell": 126,
+      "cumulative_sigma_g0_full_sky": 0.048379982791247965
+    },
+    {
+      "ell": 127,
+      "cumulative_sigma_g0_full_sky": 0.04801999854883598
+    },
+    {
+      "ell": 128,
+      "cumulative_sigma_g0_full_sky": 0.047657606160506356
+    },
+    {
+      "ell": 129,
+      "cumulative_sigma_g0_full_sky": 0.0472931410745525
+    },
+    {
+      "ell": 130,
+      "cumulative_sigma_g0_full_sky": 0.04692698149258374
+    },
+    {
+      "ell": 131,
+      "cumulative_sigma_g0_full_sky": 0.04655947789253531
+    },
+    {
+      "ell": 132,
+      "cumulative_sigma_g0_full_sky": 0.0461909480317884
+    },
+    {
+      "ell": 133,
+      "cumulative_sigma_g0_full_sky": 0.0458217573738438
+    },
+    {
+      "ell": 134,
+      "cumulative_sigma_g0_full_sky": 0.04545217333749529
+    },
+    {
+      "ell": 135,
+      "cumulative_sigma_g0_full_sky": 0.04508254696727305
+    },
+    {
+      "ell": 136,
+      "cumulative_sigma_g0_full_sky": 0.04471312949534368
+    },
+    {
+      "ell": 137,
+      "cumulative_sigma_g0_full_sky": 0.04434421869473964
+    },
+    {
+      "ell": 138,
+      "cumulative_sigma_g0_full_sky": 0.043976079266130466
+    },
+    {
+      "ell": 139,
+      "cumulative_sigma_g0_full_sky": 0.043608937923755725
+    },
+    {
+      "ell": 140,
+      "cumulative_sigma_g0_full_sky": 0.043243071650020545
+    },
+    {
+      "ell": 141,
+      "cumulative_sigma_g0_full_sky": 0.042878655329227834
+    },
+    {
+      "ell": 142,
+      "cumulative_sigma_g0_full_sky": 0.04251594497240402
+    },
+    {
+      "ell": 143,
+      "cumulative_sigma_g0_full_sky": 0.04215510445069395
+    },
+    {
+      "ell": 144,
+      "cumulative_sigma_g0_full_sky": 0.04179633163561695
+    },
+    {
+      "ell": 145,
+      "cumulative_sigma_g0_full_sky": 0.04143980672016764
+    },
+    {
+      "ell": 146,
+      "cumulative_sigma_g0_full_sky": 0.04108566243092128
+    },
+    {
+      "ell": 147,
+      "cumulative_sigma_g0_full_sky": 0.040734083852829416
+    },
+    {
+      "ell": 148,
+      "cumulative_sigma_g0_full_sky": 0.04038517042343626
+    },
+    {
+      "ell": 149,
+      "cumulative_sigma_g0_full_sky": 0.04003907273558958
+    },
+    {
+      "ell": 150,
+      "cumulative_sigma_g0_full_sky": 0.03969589965909384
+    },
+    {
+      "ell": 151,
+      "cumulative_sigma_g0_full_sky": 0.03935573833793966
+    },
+    {
+      "ell": 152,
+      "cumulative_sigma_g0_full_sky": 0.03901872048586221
+    },
+    {
+      "ell": 153,
+      "cumulative_sigma_g0_full_sky": 0.03868488199356001
+    },
+    {
+      "ell": 154,
+      "cumulative_sigma_g0_full_sky": 0.038354348781856694
+    },
+    {
+      "ell": 155,
+      "cumulative_sigma_g0_full_sky": 0.03802714955960074
+    },
+    {
+      "ell": 156,
+      "cumulative_sigma_g0_full_sky": 0.037703363213261384
+    },
+    {
+      "ell": 157,
+      "cumulative_sigma_g0_full_sky": 0.03738304461384079
+    },
+    {
+      "ell": 158,
+      "cumulative_sigma_g0_full_sky": 0.037066215956413774
+    },
+    {
+      "ell": 159,
+      "cumulative_sigma_g0_full_sky": 0.03675294768465482
+    },
+    {
+      "ell": 160,
+      "cumulative_sigma_g0_full_sky": 0.036443239517325164
+    },
+    {
+      "ell": 161,
+      "cumulative_sigma_g0_full_sky": 0.03613713560123379
+    },
+    {
+      "ell": 162,
+      "cumulative_sigma_g0_full_sky": 0.03583465612433539
+    },
+    {
+      "ell": 163,
+      "cumulative_sigma_g0_full_sky": 0.03553579349856892
+    },
+    {
+      "ell": 164,
+      "cumulative_sigma_g0_full_sky": 0.03524059380522753
+    },
+    {
+      "ell": 165,
+      "cumulative_sigma_g0_full_sky": 0.03494901950823691
+    },
+    {
+      "ell": 166,
+      "cumulative_sigma_g0_full_sky": 0.034661105285819
+    },
+    {
+      "ell": 167,
+      "cumulative_sigma_g0_full_sky": 0.03437682994734884
+    },
+    {
+      "ell": 168,
+      "cumulative_sigma_g0_full_sky": 0.034096180842306936
+    },
+    {
+      "ell": 169,
+      "cumulative_sigma_g0_full_sky": 0.03381917166234471
+    },
+    {
+      "ell": 170,
+      "cumulative_sigma_g0_full_sky": 0.033545751811541735
+    },
+    {
+      "ell": 171,
+      "cumulative_sigma_g0_full_sky": 0.03327593963166981
+    },
+    {
+      "ell": 172,
+      "cumulative_sigma_g0_full_sky": 0.03300969158333495
+    },
+    {
+      "ell": 173,
+      "cumulative_sigma_g0_full_sky": 0.03274698964516573
+    },
+    {
+      "ell": 174,
+      "cumulative_sigma_g0_full_sky": 0.03248782391745576
+    },
+    {
+      "ell": 175,
+      "cumulative_sigma_g0_full_sky": 0.0322321404662322
+    },
+    {
+      "ell": 176,
+      "cumulative_sigma_g0_full_sky": 0.031979938803894666
+    },
+    {
+      "ell": 177,
+      "cumulative_sigma_g0_full_sky": 0.03173117150758957
+    },
+    {
+      "ell": 178,
+      "cumulative_sigma_g0_full_sky": 0.03148580488846234
+    },
+    {
+      "ell": 179,
+      "cumulative_sigma_g0_full_sky": 0.031243828112100854
+    },
+    {
+      "ell": 180,
+      "cumulative_sigma_g0_full_sky": 0.03100517034436041
+    },
+    {
+      "ell": 181,
+      "cumulative_sigma_g0_full_sky": 0.030769835664414102
+    },
+    {
+      "ell": 182,
+      "cumulative_sigma_g0_full_sky": 0.030537757612229936
+    },
+    {
+      "ell": 183,
+      "cumulative_sigma_g0_full_sky": 0.030308911326211392
+    },
+    {
+      "ell": 184,
+      "cumulative_sigma_g0_full_sky": 0.03008326635641576
+    },
+    {
+      "ell": 185,
+      "cumulative_sigma_g0_full_sky": 0.02986076338970174
+    },
+    {
+      "ell": 186,
+      "cumulative_sigma_g0_full_sky": 0.029641386899146624
+    },
+    {
+      "ell": 187,
+      "cumulative_sigma_g0_full_sky": 0.029425083928053056
+    },
+    {
+      "ell": 188,
+      "cumulative_sigma_g0_full_sky": 0.029211811140102375
+    },
+    {
+      "ell": 189,
+      "cumulative_sigma_g0_full_sky": 0.02900155054652365
+    },
+    {
+      "ell": 190,
+      "cumulative_sigma_g0_full_sky": 0.028794229502972547
+    },
+    {
+      "ell": 191,
+      "cumulative_sigma_g0_full_sky": 0.02858983964915836
+    },
+    {
+      "ell": 192,
+      "cumulative_sigma_g0_full_sky": 0.02838832191813036
+    },
+    {
+      "ell": 193,
+      "cumulative_sigma_g0_full_sky": 0.028189635926416445
+    },
+    {
+      "ell": 194,
+      "cumulative_sigma_g0_full_sky": 0.027993759909233747
+    },
+    {
+      "ell": 195,
+      "cumulative_sigma_g0_full_sky": 0.02780062667570746
+    },
+    {
+      "ell": 196,
+      "cumulative_sigma_g0_full_sky": 0.02761022062161896
+    },
+    {
+      "ell": 197,
+      "cumulative_sigma_g0_full_sky": 0.027422491888553547
+    },
+    {
+      "ell": 198,
+      "cumulative_sigma_g0_full_sky": 0.02723739399382099
+    },
+    {
+      "ell": 199,
+      "cumulative_sigma_g0_full_sky": 0.027054908350166124
+    },
+    {
+      "ell": 200,
+      "cumulative_sigma_g0_full_sky": 0.026874973582726627
+    },
+    {
+      "ell": 201,
+      "cumulative_sigma_g0_full_sky": 0.026697564184158744
+    },
+    {
+      "ell": 202,
+      "cumulative_sigma_g0_full_sky": 0.026522647041494152
+    },
+    {
+      "ell": 203,
+      "cumulative_sigma_g0_full_sky": 0.02635016216447221
+    },
+    {
+      "ell": 204,
+      "cumulative_sigma_g0_full_sky": 0.0261801039702551
+    },
+    {
+      "ell": 205,
+      "cumulative_sigma_g0_full_sky": 0.026012407271615256
+    },
+    {
+      "ell": 206,
+      "cumulative_sigma_g0_full_sky": 0.02584705020606567
+    },
+    {
+      "ell": 207,
+      "cumulative_sigma_g0_full_sky": 0.025683999972506224
+    },
+    {
+      "ell": 208,
+      "cumulative_sigma_g0_full_sky": 0.025523205459658256
+    },
+    {
+      "ell": 209,
+      "cumulative_sigma_g0_full_sky": 0.025364648607425575
+    },
+    {
+      "ell": 210,
+      "cumulative_sigma_g0_full_sky": 0.025208288590033382
+    },
+    {
+      "ell": 211,
+      "cumulative_sigma_g0_full_sky": 0.025054080835334506
+    },
+    {
+      "ell": 212,
+      "cumulative_sigma_g0_full_sky": 0.02490201667002776
+    },
+    {
+      "ell": 213,
+      "cumulative_sigma_g0_full_sky": 0.024752034152387255
+    },
+    {
+      "ell": 214,
+      "cumulative_sigma_g0_full_sky": 0.024604121119763726
+    },
+    {
+      "ell": 215,
+      "cumulative_sigma_g0_full_sky": 0.024458242140330856
+    },
+    {
+      "ell": 216,
+      "cumulative_sigma_g0_full_sky": 0.024314352449714298
+    },
+    {
+      "ell": 217,
+      "cumulative_sigma_g0_full_sky": 0.02417244215586308
+    },
+    {
+      "ell": 218,
+      "cumulative_sigma_g0_full_sky": 0.024032464436082934
+    },
+    {
+      "ell": 219,
+      "cumulative_sigma_g0_full_sky": 0.023894391404823488
+    },
+    {
+      "ell": 220,
+      "cumulative_sigma_g0_full_sky": 0.02375820679707773
+    },
+    {
+      "ell": 221,
+      "cumulative_sigma_g0_full_sky": 0.02362386112700913
+    },
+    {
+      "ell": 222,
+      "cumulative_sigma_g0_full_sky": 0.023491341152237114
+    },
+    {
+      "ell": 223,
+      "cumulative_sigma_g0_full_sky": 0.02336061899768663
+    },
+    {
+      "ell": 224,
+      "cumulative_sigma_g0_full_sky": 0.023231650067308658
+    },
+    {
+      "ell": 225,
+      "cumulative_sigma_g0_full_sky": 0.02310443375558486
+    },
+    {
+      "ell": 226,
+      "cumulative_sigma_g0_full_sky": 0.022978920691081244
+    },
+    {
+      "ell": 227,
+      "cumulative_sigma_g0_full_sky": 0.022855093852936437
+    },
+    {
+      "ell": 228,
+      "cumulative_sigma_g0_full_sky": 0.022732934406512535
+    },
+    {
+      "ell": 229,
+      "cumulative_sigma_g0_full_sky": 0.022612402689743603
+    },
+    {
+      "ell": 230,
+      "cumulative_sigma_g0_full_sky": 0.02249348392296301
+    },
+    {
+      "ell": 231,
+      "cumulative_sigma_g0_full_sky": 0.022376158726543856
+    },
+    {
+      "ell": 232,
+      "cumulative_sigma_g0_full_sky": 0.022260383325026594
+    },
+    {
+      "ell": 233,
+      "cumulative_sigma_g0_full_sky": 0.022146160991603197
+    },
+    {
+      "ell": 234,
+      "cumulative_sigma_g0_full_sky": 0.022033449166189885
+    },
+    {
+      "ell": 235,
+      "cumulative_sigma_g0_full_sky": 0.021922229352078108
+    },
+    {
+      "ell": 236,
+      "cumulative_sigma_g0_full_sky": 0.021812491068197454
+    },
+    {
+      "ell": 237,
+      "cumulative_sigma_g0_full_sky": 0.02170419610440068
+    },
+    {
+      "ell": 238,
+      "cumulative_sigma_g0_full_sky": 0.02159733243598198
+    },
+    {
+      "ell": 239,
+      "cumulative_sigma_g0_full_sky": 0.02149188540677804
+    },
+    {
+      "ell": 240,
+      "cumulative_sigma_g0_full_sky": 0.021387816872996613
+    },
+    {
+      "ell": 241,
+      "cumulative_sigma_g0_full_sky": 0.021285125113373222
+    },
+    {
+      "ell": 242,
+      "cumulative_sigma_g0_full_sky": 0.02118378485212722
+    },
+    {
+      "ell": 243,
+      "cumulative_sigma_g0_full_sky": 0.021083765835303196
+    },
+    {
+      "ell": 244,
+      "cumulative_sigma_g0_full_sky": 0.02098507142574586
+    },
+    {
+      "ell": 245,
+      "cumulative_sigma_g0_full_sky": 0.0208876636326961
+    },
+    {
+      "ell": 246,
+      "cumulative_sigma_g0_full_sky": 0.020791530953167492
+    },
+    {
+      "ell": 247,
+      "cumulative_sigma_g0_full_sky": 0.02069666401466378
+    },
+    {
+      "ell": 248,
+      "cumulative_sigma_g0_full_sky": 0.020603032356134067
+    },
+    {
+      "ell": 249,
+      "cumulative_sigma_g0_full_sky": 0.02051062419949088
+    },
+    {
+      "ell": 250,
+      "cumulative_sigma_g0_full_sky": 0.020419434010526448
+    },
+    {
+      "ell": 251,
+      "cumulative_sigma_g0_full_sky": 0.020329422543208332
+    },
+    {
+      "ell": 252,
+      "cumulative_sigma_g0_full_sky": 0.02024059674439593
+    },
+    {
+      "ell": 253,
+      "cumulative_sigma_g0_full_sky": 0.020152931383136213
+    },
+    {
+      "ell": 254,
+      "cumulative_sigma_g0_full_sky": 0.0200664050902729
+    },
+    {
+      "ell": 255,
+      "cumulative_sigma_g0_full_sky": 0.019981016966458282
+    },
+    {
+      "ell": 256,
+      "cumulative_sigma_g0_full_sky": 0.019896744897129604
+    },
+    {
+      "ell": 257,
+      "cumulative_sigma_g0_full_sky": 0.0198135675952641
+    },
+    {
+      "ell": 258,
+      "cumulative_sigma_g0_full_sky": 0.019731489887108513
+    },
+    {
+      "ell": 259,
+      "cumulative_sigma_g0_full_sky": 0.01965048091272784
+    },
+    {
+      "ell": 260,
+      "cumulative_sigma_g0_full_sky": 0.019570530882161073
+    },
+    {
+      "ell": 261,
+      "cumulative_sigma_g0_full_sky": 0.019491639750110187
+    },
+    {
+      "ell": 262,
+      "cumulative_sigma_g0_full_sky": 0.019413775287696833
+    },
+    {
+      "ell": 263,
+      "cumulative_sigma_g0_full_sky": 0.019336937061922806
+    },
+    {
+      "ell": 264,
+      "cumulative_sigma_g0_full_sky": 0.019261116192266333
+    },
+    {
+      "ell": 265,
+      "cumulative_sigma_g0_full_sky": 0.01918628777576326
+    },
+    {
+      "ell": 266,
+      "cumulative_sigma_g0_full_sky": 0.019112449255011894
+    },
+    {
+      "ell": 267,
+      "cumulative_sigma_g0_full_sky": 0.019039595498281995
+    },
+    {
+      "ell": 268,
+      "cumulative_sigma_g0_full_sky": 0.01896769514713473
+    },
+    {
+      "ell": 269,
+      "cumulative_sigma_g0_full_sky": 0.018896759321229216
+    },
+    {
+      "ell": 270,
+      "cumulative_sigma_g0_full_sky": 0.018826767784650155
+    },
+    {
+      "ell": 271,
+      "cumulative_sigma_g0_full_sky": 0.018757704123801226
+    },
+    {
+      "ell": 272,
+      "cumulative_sigma_g0_full_sky": 0.018689570493896576
+    },
+    {
+      "ell": 273,
+      "cumulative_sigma_g0_full_sky": 0.018622353423786066
+    },
+    {
+      "ell": 274,
+      "cumulative_sigma_g0_full_sky": 0.018556031436530264
+    },
+    {
+      "ell": 275,
+      "cumulative_sigma_g0_full_sky": 0.018490615472127898
+    },
+    {
+      "ell": 276,
+      "cumulative_sigma_g0_full_sky": 0.018426082748987525
+    },
+    {
+      "ell": 277,
+      "cumulative_sigma_g0_full_sky": 0.018362421274720354
+    },
+    {
+      "ell": 278,
+      "cumulative_sigma_g0_full_sky": 0.018299638082002176
+    },
+    {
+      "ell": 279,
+      "cumulative_sigma_g0_full_sky": 0.018237710813740343
+    },
+    {
+      "ell": 280,
+      "cumulative_sigma_g0_full_sky": 0.018176631011265567
+    },
+    {
+      "ell": 281,
+      "cumulative_sigma_g0_full_sky": 0.018116403424147987
+    },
+    {
+      "ell": 282,
+      "cumulative_sigma_g0_full_sky": 0.018057008389637485
+    },
+    {
+      "ell": 283,
+      "cumulative_sigma_g0_full_sky": 0.017998435412124127
+    },
+    {
+      "ell": 284,
+      "cumulative_sigma_g0_full_sky": 0.017940695047130344
+    },
+    {
+      "ell": 285,
+      "cumulative_sigma_g0_full_sky": 0.017883759804496732
+    },
+    {
+      "ell": 286,
+      "cumulative_sigma_g0_full_sky": 0.017827630055514115
+    },
+    {
+      "ell": 287,
+      "cumulative_sigma_g0_full_sky": 0.01777230668471972
+    },
+    {
+      "ell": 288,
+      "cumulative_sigma_g0_full_sky": 0.017717771813250963
+    },
+    {
+      "ell": 289,
+      "cumulative_sigma_g0_full_sky": 0.017664018063584697
+    },
+    {
+      "ell": 290,
+      "cumulative_sigma_g0_full_sky": 0.017611055192229004
+    },
+    {
+      "ell": 291,
+      "cumulative_sigma_g0_full_sky": 0.017558857231451452
+    },
+    {
+      "ell": 292,
+      "cumulative_sigma_g0_full_sky": 0.017507425385567217
+    },
+    {
+      "ell": 293,
+      "cumulative_sigma_g0_full_sky": 0.017456763188783805
+    },
+    {
+      "ell": 294,
+      "cumulative_sigma_g0_full_sky": 0.017406850162005574
+    },
+    {
+      "ell": 295,
+      "cumulative_sigma_g0_full_sky": 0.01735768450501591
+    },
+    {
+      "ell": 296,
+      "cumulative_sigma_g0_full_sky": 0.017309272103375996
+    },
+    {
+      "ell": 297,
+      "cumulative_sigma_g0_full_sky": 0.01726159288752759
+    },
+    {
+      "ell": 298,
+      "cumulative_sigma_g0_full_sky": 0.017214643490574222
+    },
+    {
+      "ell": 299,
+      "cumulative_sigma_g0_full_sky": 0.017168433621880398
+    },
+    {
+      "ell": 300,
+      "cumulative_sigma_g0_full_sky": 0.017122939615069836
+    },
+    {
+      "ell": 301,
+      "cumulative_sigma_g0_full_sky": 0.017078162865296953
+    },
+    {
+      "ell": 302,
+      "cumulative_sigma_g0_full_sky": 0.017034107778411394
+    },
+    {
+      "ell": 303,
+      "cumulative_sigma_g0_full_sky": 0.016990758847772434
+    },
+    {
+      "ell": 304,
+      "cumulative_sigma_g0_full_sky": 0.016948108498598617
+    },
+    {
+      "ell": 305,
+      "cumulative_sigma_g0_full_sky": 0.01690617011497216
+    },
+    {
+      "ell": 306,
+      "cumulative_sigma_g0_full_sky": 0.016864922155682378
+    },
+    {
+      "ell": 307,
+      "cumulative_sigma_g0_full_sky": 0.016824361984918126
+    },
+    {
+      "ell": 308,
+      "cumulative_sigma_g0_full_sky": 0.016784498118407085
+    },
+    {
+      "ell": 309,
+      "cumulative_sigma_g0_full_sky": 0.016745316145119135
+    },
+    {
+      "ell": 310,
+      "cumulative_sigma_g0_full_sky": 0.01670680686320697
+    },
+    {
+      "ell": 311,
+      "cumulative_sigma_g0_full_sky": 0.01666898254041666
+    },
+    {
+      "ell": 312,
+      "cumulative_sigma_g0_full_sky": 0.016631830045605936
+    },
+    {
+      "ell": 313,
+      "cumulative_sigma_g0_full_sky": 0.01659533722694758
+    },
+    {
+      "ell": 314,
+      "cumulative_sigma_g0_full_sky": 0.016559518098568527
+    },
+    {
+      "ell": 315,
+      "cumulative_sigma_g0_full_sky": 0.01652436047145076
+    },
+    {
+      "ell": 316,
+      "cumulative_sigma_g0_full_sky": 0.016489852715078634
+    },
+    {
+      "ell": 317,
+      "cumulative_sigma_g0_full_sky": 0.01645600372274769
+    },
+    {
+      "ell": 318,
+      "cumulative_sigma_g0_full_sky": 0.01642281077410969
+    },
+    {
+      "ell": 319,
+      "cumulative_sigma_g0_full_sky": 0.016390253971843426
+    },
+    {
+      "ell": 320,
+      "cumulative_sigma_g0_full_sky": 0.016358345806882238
+    },
+    {
+      "ell": 321,
+      "cumulative_sigma_g0_full_sky": 0.01632708303081803
+    },
+    {
+      "ell": 322,
+      "cumulative_sigma_g0_full_sky": 0.01629644901186228
+    },
+    {
+      "ell": 323,
+      "cumulative_sigma_g0_full_sky": 0.016266448058027877
+    },
+    {
+      "ell": 324,
+      "cumulative_sigma_g0_full_sky": 0.016237085654142343
+    },
+    {
+      "ell": 325,
+      "cumulative_sigma_g0_full_sky": 0.016208342205277337
+    },
+    {
+      "ell": 326,
+      "cumulative_sigma_g0_full_sky": 0.016180218481520382
+    },
+    {
+      "ell": 327,
+      "cumulative_sigma_g0_full_sky": 0.01615272362975081
+    },
+    {
+      "ell": 328,
+      "cumulative_sigma_g0_full_sky": 0.016125839593812665
+    },
+    {
+      "ell": 329,
+      "cumulative_sigma_g0_full_sky": 0.016099562121230322
+    },
+    {
+      "ell": 330,
+      "cumulative_sigma_g0_full_sky": 0.016073900684271558
+    },
+    {
+      "ell": 331,
+      "cumulative_sigma_g0_full_sky": 0.016048844489838086
+    },
+    {
+      "ell": 332,
+      "cumulative_sigma_g0_full_sky": 0.016024379343531063
+    },
+    {
+      "ell": 333,
+      "cumulative_sigma_g0_full_sky": 0.016000518239407978
+    },
+    {
+      "ell": 334,
+      "cumulative_sigma_g0_full_sky": 0.01597725290966127
+    },
+    {
+      "ell": 335,
+      "cumulative_sigma_g0_full_sky": 0.015954567749566422
+    },
+    {
+      "ell": 336,
+      "cumulative_sigma_g0_full_sky": 0.01593246858332187
+    },
+    {
+      "ell": 337,
+      "cumulative_sigma_g0_full_sky": 0.015910957196183146
+    },
+    {
+      "ell": 338,
+      "cumulative_sigma_g0_full_sky": 0.015890013660306533
+    },
+    {
+      "ell": 339,
+      "cumulative_sigma_g0_full_sky": 0.01586963839958841
+    },
+    {
+      "ell": 340,
+      "cumulative_sigma_g0_full_sky": 0.01584983832551828
+    },
+    {
+      "ell": 341,
+      "cumulative_sigma_g0_full_sky": 0.01583059551539137
+    },
+    {
+      "ell": 342,
+      "cumulative_sigma_g0_full_sky": 0.01581190251483609
+    },
+    {
+      "ell": 343,
+      "cumulative_sigma_g0_full_sky": 0.015793767212529695
+    },
+    {
+      "ell": 344,
+      "cumulative_sigma_g0_full_sky": 0.01577617968205309
+    },
+    {
+      "ell": 345,
+      "cumulative_sigma_g0_full_sky": 0.01575912232009185
+    },
+    {
+      "ell": 346,
+      "cumulative_sigma_g0_full_sky": 0.01574260299041518
+    },
+    {
+      "ell": 347,
+      "cumulative_sigma_g0_full_sky": 0.015726617364063163
+    },
+    {
+      "ell": 348,
+      "cumulative_sigma_g0_full_sky": 0.01571114643408174
+    },
+    {
+      "ell": 349,
+      "cumulative_sigma_g0_full_sky": 0.015696188160052204
+    },
+    {
+      "ell": 350,
+      "cumulative_sigma_g0_full_sky": 0.015681747016844945
+    },
+    {
+      "ell": 351,
+      "cumulative_sigma_g0_full_sky": 0.015667804663600737
+    },
+    {
+      "ell": 352,
+      "cumulative_sigma_g0_full_sky": 0.015654349944973556
+    },
+    {
+      "ell": 353,
+      "cumulative_sigma_g0_full_sky": 0.01564138920139874
+    },
+    {
+      "ell": 354,
+      "cumulative_sigma_g0_full_sky": 0.015628910808581285
+    },
+    {
+      "ell": 355,
+      "cumulative_sigma_g0_full_sky": 0.015616896663892908
+    },
+    {
+      "ell": 356,
+      "cumulative_sigma_g0_full_sky": 0.01560534710325042
+    },
+    {
+      "ell": 357,
+      "cumulative_sigma_g0_full_sky": 0.015594260984375627
+    },
+    {
+      "ell": 358,
+      "cumulative_sigma_g0_full_sky": 0.015583616511765526
+    },
+    {
+      "ell": 359,
+      "cumulative_sigma_g0_full_sky": 0.015573406285972875
+    },
+    {
+      "ell": 360,
+      "cumulative_sigma_g0_full_sky": 0.015563632414146905
+    },
+    {
+      "ell": 361,
+      "cumulative_sigma_g0_full_sky": 0.015554280321413939
+    },
+    {
+      "ell": 362,
+      "cumulative_sigma_g0_full_sky": 0.015545331712531248
+    },
+    {
+      "ell": 363,
+      "cumulative_sigma_g0_full_sky": 0.015536787144160139
+    },
+    {
+      "ell": 364,
+      "cumulative_sigma_g0_full_sky": 0.015528640583610606
+    },
+    {
+      "ell": 365,
+      "cumulative_sigma_g0_full_sky": 0.015520870481367693
+    },
+    {
+      "ell": 366,
+      "cumulative_sigma_g0_full_sky": 0.015513468936916124
+    },
+    {
+      "ell": 367,
+      "cumulative_sigma_g0_full_sky": 0.015506435348539283
+    },
+    {
+      "ell": 368,
+      "cumulative_sigma_g0_full_sky": 0.015499754028628828
+    },
+    {
+      "ell": 369,
+      "cumulative_sigma_g0_full_sky": 0.015493406208897359
+    },
+    {
+      "ell": 370,
+      "cumulative_sigma_g0_full_sky": 0.015487390941113592
+    },
+    {
+      "ell": 371,
+      "cumulative_sigma_g0_full_sky": 0.015481700412311176
+    },
+    {
+      "ell": 372,
+      "cumulative_sigma_g0_full_sky": 0.0154763144903964
+    },
+    {
+      "ell": 373,
+      "cumulative_sigma_g0_full_sky": 0.015471222337221903
+    },
+    {
+      "ell": 374,
+      "cumulative_sigma_g0_full_sky": 0.015466422589389881
+    },
+    {
+      "ell": 375,
+      "cumulative_sigma_g0_full_sky": 0.015461900331448609
+    },
+    {
+      "ell": 376,
+      "cumulative_sigma_g0_full_sky": 0.015457637050777528
+    },
+    {
+      "ell": 377,
+      "cumulative_sigma_g0_full_sky": 0.015453628690639381
+    },
+    {
+      "ell": 378,
+      "cumulative_sigma_g0_full_sky": 0.015449869012577845
+    },
+    {
+      "ell": 379,
+      "cumulative_sigma_g0_full_sky": 0.015446339935684424
+    },
+    {
+      "ell": 380,
+      "cumulative_sigma_g0_full_sky": 0.015443028004140675
+    },
+    {
+      "ell": 381,
+      "cumulative_sigma_g0_full_sky": 0.01543993131029578
+    },
+    {
+      "ell": 382,
+      "cumulative_sigma_g0_full_sky": 0.015437038497924691
+    },
+    {
+      "ell": 383,
+      "cumulative_sigma_g0_full_sky": 0.015434332286087045
+    },
+    {
+      "ell": 384,
+      "cumulative_sigma_g0_full_sky": 0.015431804990112484
+    },
+    {
+      "ell": 385,
+      "cumulative_sigma_g0_full_sky": 0.015429453354155288
+    },
+    {
+      "ell": 386,
+      "cumulative_sigma_g0_full_sky": 0.015427263381837105
+    },
+    {
+      "ell": 387,
+      "cumulative_sigma_g0_full_sky": 0.015425220694128673
+    },
+    {
+      "ell": 388,
+      "cumulative_sigma_g0_full_sky": 0.015423321579736832
+    },
+    {
+      "ell": 389,
+      "cumulative_sigma_g0_full_sky": 0.015421560190752682
+    },
+    {
+      "ell": 390,
+      "cumulative_sigma_g0_full_sky": 0.015419922570367289
+    },
+    {
+      "ell": 391,
+      "cumulative_sigma_g0_full_sky": 0.015418398299435976
+    },
+    {
+      "ell": 392,
+      "cumulative_sigma_g0_full_sky": 0.015416985548816294
+    },
+    {
+      "ell": 393,
+      "cumulative_sigma_g0_full_sky": 0.015415676684510176
+    },
+    {
+      "ell": 394,
+      "cumulative_sigma_g0_full_sky": 0.01541445914528393
+    },
+    {
+      "ell": 395,
+      "cumulative_sigma_g0_full_sky": 0.01541332632727763
+    },
+    {
+      "ell": 396,
+      "cumulative_sigma_g0_full_sky": 0.015412276681851854
+    },
+    {
+      "ell": 397,
+      "cumulative_sigma_g0_full_sky": 0.015411302244584058
+    },
+    {
+      "ell": 398,
+      "cumulative_sigma_g0_full_sky": 0.01541039245568101
+    }
+  ],
+  "estimator": "l, l+2 off-diagonal of <a_lm a*_l'm'>, which vanishes identically for an isotropic sky"
+}

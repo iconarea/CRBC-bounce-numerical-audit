@@ -1,0 +1,81 @@
+{
+  "purpose": "five-channel estimator with axis maximization and its look-elsewhere calibration",
+  "configuration": {
+    "nside": 128,
+    "lmin": 2,
+    "lmax": 120,
+    "deltas": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "grid_nside": 8,
+    "candidate_directions": 768,
+    "grid_resolution_deg": 7.329037678543799,
+    "null_realizations": 300,
+    "train_per_axis": 30
+  },
+  "response_matrix": {
+    "matrix": [
+      [
+        -151.23790678055403,
+        128.8247515428855,
+        -145.3034125496346,
+        88.38354371829318,
+        -45.915059489227524
+      ],
+      [
+        -80.21874131633139,
+        499.249245905333,
+        966.2124736439627,
+        -168.1904319755286,
+        -70.2988051242799
+      ],
+      [
+        -44.91425481070053,
+        113.35915951066886,
+        906.592702281357,
+        -88.39937730368405,
+        16.64826528571874
+      ],
+      [
+        -87.91496459352977,
+        283.52933623040656,
+        1756.5280605663963,
+        24.766769506257244,
+        75.60709445101708
+      ],
+      [
+        166.2606714562023,
+        -470.7106328743175,
+        -1865.3391409738085,
+        249.41795276439083,
+        -131.01654731026272
+      ]
+    ],
+    "condition_number": 53.36059678597302,
+    "note": "measured by injecting along five independent axes; the mask mixes the M channels"
+  },
+  "null_distribution": {
+    "mean_statistic": 3.816491929468954,
+    "median_statistic": 2.959845568469153,
+    "percentile_95": 10.046340616473579,
+    "percentile_99": 15.440659880557726,
+    "chi2_1dof_95_reference": 3.84,
+    "look_elsewhere_inflation_vs_1dof": 2.6162345355399945,
+    "note": "the 95th percentile of this distribution, not a chi-square table, sets the threshold; the gap to 3.84 is the look-elsewhere penalty of scanning the sky"
+  },
+  "axis_recovery": {
+    "injected_theta_phi": [
+      1.2132252231493863,
+      1.1
+    ],
+    "injected_amplitude": 1.5,
+    "median_angular_error_deg": 35.86356184246597,
+    "grid_resolution_deg": 7.329037678543799,
+    "recovered_amplitude_mean": 1.1749011355691859,
+    "axis_recovered_within_two_pixels": false
+  },
+  "verdict": "Axis recovery failed; the five-channel calibration or the grid needs revision."
+}

@@ -1,0 +1,86 @@
+{
+  "gate": "pre-registration §3.3 mask-coupling check",
+  "reads_only_the_mask": true,
+  "configuration": {
+    "nside": 256,
+    "lmin": 2,
+    "lmax": 250,
+    "simulations": 600,
+    "tilt": -0.7,
+    "f_sky": 0.7807769775390625,
+    "apodize_fwhm_deg": 0.0
+  },
+  "normalization_checks_vs_camb": {
+    "2": 0.9999092619555816,
+    "10": 0.999875542680276,
+    "50": 0.999284891693565
+  },
+  "full_sky_control": {
+    "simulations": 150,
+    "mean_pull_per_M": {
+      "-2": 1.0383790435038556,
+      "-1": 1.4342609359619216,
+      "0": 2.442465039471672,
+      "1": 1.434260935961918,
+      "2": 1.0383790435037714
+    },
+    "scatter_per_M": {
+      "-2": 0.015438298023760226,
+      "-1": 0.015789518241977853,
+      "0": 0.02167906543104642,
+      "1": 0.015789518241977857,
+      "2": 0.01543829802375972
+    },
+    "estimator_unbiased_without_mask": true
+  },
+  "per_M": {
+    "-2": {
+      "bias_first_half": 0.11773116464594476,
+      "bias_second_half": 0.11653416795028167,
+      "scatter": 0.013148727559736381,
+      "bias_over_scatter": 8.953806679093224,
+      "stability_sigma": 1.1151753237653301,
+      "closure_sigma": 1.5844558576092123
+    },
+    "-1": {
+      "bias_first_half": 0.06951012738704404,
+      "bias_second_half": 0.06919769680531954,
+      "scatter": 0.014760254221738838,
+      "bias_over_scatter": 4.709277112901607,
+      "stability_sigma": 0.2590400259863539,
+      "closure_sigma": 0.3698272793604937
+    },
+    "0": {
+      "bias_first_half": -0.6170909923645361,
+      "bias_second_half": -0.6170750864955952,
+      "scatter": 0.01842376015736954,
+      "bias_over_scatter": 33.4943023081908,
+      "stability_sigma": 0.01056481701194709,
+      "closure_sigma": 0.015015332929406102
+    },
+    "1": {
+      "bias_first_half": -0.06951012738704403,
+      "bias_second_half": -0.06919769680531954,
+      "scatter": 0.014760254221738836,
+      "bias_over_scatter": 4.709277112901607,
+      "stability_sigma": 0.25904002598634246,
+      "closure_sigma": 0.36982727936049475
+    },
+    "2": {
+      "bias_first_half": 0.11773116464594027,
+      "bias_second_half": 0.11653416795027705,
+      "scatter": 0.013148727559735915,
+      "bias_over_scatter": 8.953806679093201,
+      "stability_sigma": 1.1151753237654995,
+      "closure_sigma": 1.5844558576093417
+    }
+  },
+  "verdict": {
+    "estimator_unbiased_on_full_sky": true,
+    "bias_small_compared_to_scatter": false,
+    "bias_stable_between_halves": true,
+    "out_of_sample_closure": true,
+    "gate_passed": false,
+    "conclusion": "The mask coupling fails at least one criterion. Per the pre-registration the estimator is not used on data in this configuration."
+  }
+}

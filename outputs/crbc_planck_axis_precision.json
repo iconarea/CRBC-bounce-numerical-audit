@@ -1,0 +1,36 @@
+{
+  "purpose": "measure the single-sky axis precision directly, refining the grid until the answer stops depending on it",
+  "configuration": {
+    "lmin": 2,
+    "lmax": 1000,
+    "deltas": [
+      2,
+      4,
+      6
+    ],
+    "injection": 3.0,
+    "trials": 80,
+    "null_realizations": 100,
+    "full_sky": true
+  },
+  "by_grid": {
+    "64": {
+      "grid_resolution_deg": 0.9161297098179749,
+      "median_error_deg": 0.4894311788981136,
+      "percentile_68_deg": 0.9327458736003315
+    },
+    "128": {
+      "grid_resolution_deg": 0.45806485490898746,
+      "median_error_deg": 0.7407522692780413,
+      "percentile_68_deg": 0.8750288749160825
+    },
+    "256": {
+      "grid_resolution_deg": 0.22903242745449373,
+      "median_error_deg": 0.7207331007476463,
+      "percentile_68_deg": 0.9127576681846102
+    }
+  },
+  "grid_converged": true,
+  "measured_axis_error_deg": 0.7207331007476463,
+  "note": "full sky; the mask reduces the effective mode count and will widen this"
+}
