@@ -7,7 +7,7 @@ Reproducibility package for:
 
 Author: Ho Hyung Kim, Independent Researcher, Seoul, Republic of Korea.
 
-Latest archived preprint: see the repository release and Zenodo DOI linked below.
+Latest archived preprint (v1.2): [10.5281/zenodo.21813977](https://doi.org/10.5281/zenodo.21813977)
 
 ## Scope
 
@@ -74,5 +74,5 @@ is from [Planck 2018 X](https://arxiv.org/abs/1807.06211).
 
 ## Citation and license
 
-This release is licensed under [CC BY 4.0](LICENSE). Cite the latest Zenodo
-version shown in this repository's release metadata.
+This release is licensed under [CC BY 4.0](LICENSE). Cite v1.2,
+[10.5281/zenodo.21813977](https://doi.org/10.5281/zenodo.21813977).

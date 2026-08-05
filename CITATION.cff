@@ -8,6 +8,9 @@ authors:
     affiliation: "Independent Researcher, Seoul, Republic of Korea"
     email: iconarea@gmail.com
 license: CC-BY-4.0
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21813977
 keywords:
   - bounce cosmology
   - beyond-Horndeski
