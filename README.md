@@ -7,6 +7,8 @@ Reproducibility package for:
 
 Author: Ho Hyung Kim, Independent Researcher, Seoul, Republic of Korea.
 
+Archived preprint DOI: [10.5281/zenodo.21813443](https://doi.org/10.5281/zenodo.21813443)
+
 ## Scope
 
 This is a numerical audit of a phenomenological bounce ansatz. It is **not** a
@@ -60,5 +62,5 @@ is from [Planck 2018 X](https://arxiv.org/abs/1807.06211).
 
 ## Citation and license
 
-This release is licensed under [CC BY 4.0](LICENSE). Cite the Zenodo DOI of the
-archived release once assigned.
+This release is licensed under [CC BY 4.0](LICENSE). Cite
+[10.5281/zenodo.21813443](https://doi.org/10.5281/zenodo.21813443).
