@@ -82,6 +82,20 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--tau1", type=float, default=1.7)
     parser.add_argument("--tau2-sq", type=float, default=0.59)
     parser.add_argument("--w", type=float, default=1.0)
+    parser.add_argument("--adiabatic-n-s-minus-one", type=float, default=2.3542,
+                        help="single-field tilt of the SAME background, for comparison only; "
+                             "the default is the tanh p(eta) value and is wrong for --derived-background")
+    parser.add_argument("--derived-background", action="store_true",
+                        help="use the derived background of section 13 instead of the tanh p(eta)")
+    parser.add_argument("--w-ekpyrotic", type=float, default=4.3333333333333333,
+                        help="ekpyrotic w_1 of the derived background (distinct from --w)")
+    parser.add_argument("--gamma", type=float, default=26.0)
+    parser.add_argument("--rho-h-over-rho-c", type=float, default=1e-2)
+    parser.add_argument("--rho-initial", type=float, default=1.8e-10)
+    parser.add_argument("--rho-stop", type=float, default=1e-5)
+    parser.add_argument("--t-max", type=float, default=4e6)
+    parser.add_argument("--rtol", type=float, default=1e-11)
+    parser.add_argument("--atol", type=float, default=1e-16)
 
     parser.add_argument("--extent", type=float, default=2000.0)
     parser.add_argument("--steps", type=int, default=30000)
@@ -251,8 +265,9 @@ def main() -> None:
             "grid_convergence_at_planck_lambda": convergence,
         },
         "single_field_comparison": {
-            "adiabatic_n_s_minus_one": 2.3542,
-            "note": "the adiabatic mode of the same background, from crbc_primordial_spectrum.py",
+            "adiabatic_n_s_minus_one": args.adiabatic_n_s_minus_one,
+            "note": "the adiabatic mode of the same background, from crbc_primordial_spectrum.py; "
+        "background-dependent, so it must be supplied with --adiabatic-n-s-minus-one",
         },
         "not_claimed": [
             "The entropy field is added by hand, not derived from CRBC microphysics.",

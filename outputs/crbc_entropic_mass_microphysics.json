@@ -1,0 +1,150 @@
+{
+  "shear_target": -6.55,
+  "rho_tr_over_rho_c": 0.3,
+  "closed_form_check": [
+    {
+      "p": 4,
+      "beta": 0.3333333333333333,
+      "numeric": 20.000000000000004,
+      "closed": 20.0
+    },
+    {
+      "p": 5,
+      "beta": 0.25,
+      "numeric": 35.0,
+      "closed": 35.0
+    },
+    {
+      "p": 6,
+      "beta": 0.2,
+      "numeric": 53.99999999999999,
+      "closed": 54.0
+    },
+    {
+      "p": 8,
+      "beta": 0.14285714285714285,
+      "numeric": 104.00000000000001,
+      "closed": 104.0
+    },
+    {
+      "p": 10,
+      "beta": 0.1111111111111111,
+      "numeric": 170.0,
+      "closed": 170.0
+    },
+    {
+      "p": 16,
+      "beta": 0.06666666666666667,
+      "numeric": 464.0,
+      "closed": 464.0
+    },
+    {
+      "p": 30,
+      "beta": 0.034482758620689655,
+      "numeric": 1710.0,
+      "closed": 1710.0
+    }
+  ],
+  "required_coefficients": [
+    {
+      "p": 4,
+      "lambda_SI": 20.0,
+      "xi_non_minimal": 1.6666666666666667,
+      "field_space_curvature": 2.5,
+      "potential_transverse": 20.0
+    },
+    {
+      "p": 5,
+      "lambda_SI": 35.0,
+      "xi_non_minimal": 1.9444444444444444,
+      "field_space_curvature": 3.5,
+      "potential_transverse": 17.5
+    },
+    {
+      "p": 6,
+      "lambda_SI": 54.0,
+      "xi_non_minimal": 2.25,
+      "field_space_curvature": 4.5,
+      "potential_transverse": 18.0
+    },
+    {
+      "p": 8,
+      "lambda_SI": 104.0,
+      "xi_non_minimal": 2.888888888888889,
+      "field_space_curvature": 6.5,
+      "potential_transverse": 20.8
+    },
+    {
+      "p": 10,
+      "lambda_SI": 170.0,
+      "xi_non_minimal": 3.5416666666666665,
+      "field_space_curvature": 8.5,
+      "potential_transverse": 24.285714285714285
+    },
+    {
+      "p": 16,
+      "lambda_SI": 464.0,
+      "xi_non_minimal": 5.523809523809524,
+      "field_space_curvature": 14.5,
+      "potential_transverse": 35.69230769230769
+    },
+    {
+      "p": 30,
+      "lambda_SI": 1710.0,
+      "xi_non_minimal": 10.178571428571429,
+      "field_space_curvature": 28.5,
+      "potential_transverse": 63.333333333333336
+    }
+  ],
+  "trade_off": [
+    {
+      "p": 4,
+      "shear_exponent": 0.25,
+      "xi": 1.6666666666666667,
+      "xi_fractional_tolerance": 0.0028014088425800062,
+      "rho_i_over_rho_c": 1.016461298719765e-14
+    },
+    {
+      "p": 5,
+      "shear_exponent": 0.4,
+      "xi": 1.9444444444444444,
+      "xi_fractional_tolerance": 0.0028448245817988722,
+      "rho_i_over_rho_c": 1.143805683906962e-09
+    },
+    {
+      "p": 6,
+      "shear_exponent": 0.5,
+      "xi": 2.25,
+      "xi_fractional_tolerance": 0.0028801766652596012,
+      "rho_i_over_rho_c": 5.522122686213423e-08
+    },
+    {
+      "p": 8,
+      "shear_exponent": 0.625,
+      "xi": 2.888888888888889,
+      "xi_fractional_tolerance": 0.0029298931429700297,
+      "rho_i_over_rho_c": 1.2277475945695394e-06
+    },
+    {
+      "p": 10,
+      "shear_exponent": 0.7,
+      "xi": 3.5416666666666665,
+      "xi_fractional_tolerance": 0.0029621418336174387,
+      "rho_i_over_rho_c": 4.638698111537752e-06
+    },
+    {
+      "p": 16,
+      "shear_exponent": 0.8125,
+      "xi": 5.523809523809524,
+      "xi_fractional_tolerance": 0.003013317695345337,
+      "rho_i_over_rho_c": 2.150287419855708e-05
+    },
+    {
+      "p": 30,
+      "shear_exponent": 0.9,
+      "xi": 10.178571428571429,
+      "xi_fractional_tolerance": 0.003055101164705025,
+      "rho_i_over_rho_c": 5.438086879781241e-05
+    }
+  ]
+}

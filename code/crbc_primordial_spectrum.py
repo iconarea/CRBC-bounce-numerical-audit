@@ -49,6 +49,33 @@ except ModuleNotFoundError:  # direct execution from the package directory
     from crbc_background_scan import resolve_device  # type: ignore[no-redef]
     from crbc_beyond_horndeski_realization import coefficients, crbc_background  # type: ignore[no-redef]
 
+try:
+    from quantum_gravity.crbc_gpu.crbc_derived_background_gate import (
+        as_background_dict, derived_background_on_grid)
+except ModuleNotFoundError:  # direct execution from the package directory
+    from crbc_derived_background_gate import (  # type: ignore[no-redef]
+        as_background_dict, derived_background_on_grid)
+
+
+def background_on_grid(time, args, device):
+    """Either the tanh p(eta) background or the derived one of section 13.
+
+    The derived background carries its own 1/(2H); see crbc_derived_background_gate.
+    """
+    if not getattr(args, "derived_background", False):
+        return crbc_background(time, args.w, args)
+    # --w means something else here (the constant-w fallback), so the derived background
+    # gets its own namespace; sharing the name silently builds the wrong background.
+    derived_args = argparse.Namespace(
+        w=args.w_ekpyrotic, gamma=args.gamma, rho_h_over_rho_c=args.rho_h_over_rho_c,
+        rho_initial=args.rho_initial, rho_stop=args.rho_stop,
+        t_max=args.t_max, rtol=args.rtol, atol=args.atol,
+    )
+    sampled = derived_background_on_grid(derived_args, time.detach().cpu().numpy())
+    background = as_background_dict(sampled, device)
+    background["sampled"] = sampled
+    return background
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -62,6 +89,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--tau1", type=float, default=1.7)
     parser.add_argument("--tau2-sq", type=float, default=0.59)
     parser.add_argument("--w", type=float, default=1.0, help="only used if --p-initial is unset")
+    parser.add_argument("--derived-background", action="store_true",
+                        help="use the derived background of section 13 instead of the tanh p(eta)")
+    parser.add_argument("--w-ekpyrotic", type=float, default=4.3333333333333333,
+                        help="ekpyrotic w_1 of the derived background (distinct from --w)")
+    parser.add_argument("--gamma", type=float, default=26.0)
+    parser.add_argument("--rho-h-over-rho-c", type=float, default=1e-2)
+    parser.add_argument("--rho-initial", type=float, default=1.8e-10)
+    parser.add_argument("--rho-stop", type=float, default=1e-5)
+    parser.add_argument("--t-max", type=float, default=4e6)
+    parser.add_argument("--rtol", type=float, default=1e-11)
+    parser.add_argument("--atol", type=float, default=1e-16)
 
     parser.add_argument("--extent", type=float, default=400.0)
     parser.add_argument("--steps", type=int, default=100000, help="RK4 steps; background uses 2*steps+1 points")
@@ -106,7 +144,7 @@ def second_derivative(values: torch.Tensor, step: float) -> torch.Tensor:
 def post_bounce_horizon_peak(args: argparse.Namespace, device: torch.device) -> float:
     """Time of maximal |aH| after the bounce; the widest super-horizon window."""
     probe = torch.linspace(1e-3, 20.0, 200001, dtype=torch.float64, device=device)
-    background = crbc_background(probe, args.w, args)
+    background = background_on_grid(probe, args, device)
     comoving = (background["a"] * background["H"]).abs()
     return float(probe[torch.argmax(comoving)].item())
 
@@ -117,7 +155,7 @@ def build_background(
     """Background, coefficients, and the Mukhanov-Sasaki potential on a uniform t grid."""
     time = torch.linspace(-args.extent, t_end, points, dtype=torch.float64, device=device)
     step = float((time[1] - time[0]).item())
-    background = crbc_background(time, args.w, args)
+    background = background_on_grid(time, args, device)
 
     def scalar(value: float) -> torch.Tensor:
         return torch.tensor(value, dtype=torch.float64, device=device)
@@ -276,17 +314,35 @@ def main() -> None:
     k_list = fine["k"].cpu().tolist()
     spectrum_list = fine["spectrum"].cpu().tolist()
 
-    report: dict[str, object] = {
-        "source": "gated CRBC beyond-Horndeski realization, CRBC_EFT_선정과_계수계약_kr.md §7.3",
-        "replaces": "the surrogate Gaussian potential of crbc_perturbation_scan.py",
-        "parameters": {
+    if args.derived_background:
+        # The tanh-profile arguments remain accepted for the alternate branch, but they
+        # are not inputs to the transfer-derived background.  Recording them as though
+        # they were would mislabel a p_f=3/2 calculation as the tanh default p_f=2.4.
+        parameter_report: dict[str, object] = {
+            "background_mode": "derived energy-transfer background",
+            "p_initial": 1.5 * (1.0 + args.w_ekpyrotic),
+            "p_final": 1.5,
+            "w_ekpyrotic": args.w_ekpyrotic,
+            "gamma": args.gamma,
+            "rho_H_over_rho_c": args.rho_h_over_rho_c,
+            "rho_initial_over_rho_c": args.rho_initial,
+            "note": "tanh-profile p_final, k1, k2, tau1, and tau2_sq arguments are ignored in this mode",
+        }
+    else:
+        parameter_report = {
+            "background_mode": "tanh p(t) profile",
             "p_initial": args.p_initial,
             "p_final": args.p_final,
             "k1": args.k1,
             "k2": args.k2,
             "tau1": args.tau1,
             "tau2_sq": args.tau2_sq,
-        },
+        }
+
+    report: dict[str, object] = {
+        "source": "gated CRBC beyond-Horndeski realization, CRBC_EFT_선정과_계수계약_kr.md §7.3",
+        "replaces": "the surrogate Gaussian potential of crbc_perturbation_scan.py",
+        "parameters": parameter_report,
         "grid": {"extent": args.extent, "rk4_steps": args.steps, "modes": args.modes, "t_eval": t_end},
         "device": str(device),
         "background": {

@@ -1,0 +1,59 @@
+{
+  "parameters": {
+    "k1": 7.5,
+    "k2": -6.0,
+    "tau1": 26.8333333333,
+    "tau2_sq": 6.75
+  },
+  "grid": {
+    "points": 2400025,
+    "extent": 1000.0,
+    "step": 0.000833325000030527
+  },
+  "background": {
+    "source": "derived (energy conversion above rho_H)",
+    "w_ekpyrotic": 4.333333333333333,
+    "gamma": 26.0,
+    "rho_H_over_rho_c": 0.01,
+    "rho_initial_over_rho_c": 1.8e-10,
+    "p_asymptotic_past": 7.999999999999995,
+    "p_at_bounce": 1.500000000000913,
+    "p_final_expanding": 1.5,
+    "max_abs_H_gate": 0.062499999996975905,
+    "max_abs_H_gate_expected": 0.0625,
+    "max_constraint_relative": 6.802167455537833e-09,
+    "shear_budget_contracting": -2.481049763760457,
+    "rho_at_grid_start_over_rho_c": 1.060124760523465e-06,
+    "rho_at_grid_end_over_rho_c": 2.8443635445569467e-05
+  },
+  "analytic_checks": {
+    "c_s_sq_plus_infinity": 0.49998578022582035,
+    "c_s_sq_plus_infinity_expected_p_over_3": 0.5,
+    "c_s_sq_minus_infinity": 0.7619039559959346,
+    "c_s_sq_minus_infinity_expected": 0.7619047619047614
+  },
+  "stability": {
+    "min_U": 6.0,
+    "min_c_s_sq": 0.09257742482576756,
+    "max_c_s_sq": 0.7837938152384593,
+    "eta_at_min_c_s_sq": -6.749099175674814,
+    "min_Q_T": 0.5,
+    "min_Q_s": 3.0,
+    "ghost_free": true,
+    "gradient_stable": true,
+    "subluminal": true,
+    "superluminal_points": 0
+  },
+  "eft_control": {
+    "mode": "assumed-ratio",
+    "cutoff_over_e_char": 20.0,
+    "max_e_char_over_cutoff": 0.05,
+    "passes": true
+  },
+  "gate_points": 2400023,
+  "gate_all_pass": true,
+  "scan": {
+    "skipped": true,
+    "reason": "fixed parameters supplied"
+  }
+}

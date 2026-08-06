@@ -290,11 +290,19 @@ def coefficients(
 
     # Regular evaluation of (1 - 2 f1)/(2H) through the bounce, where both vanish.
     one_minus_c2 = -torch.expm1(-eta.square() / tau2_sq)
-    safe_eta = torch.where(eta == 0.0, torch.ones_like(eta), eta)
+    # 1/(2H). For the closed form this is p(1+eta^2)/(2 eta) exactly; an externally
+    # supplied background carries its own, since H is then not that expression.
+    inv_two_hubble = background.get("inv_two_hubble")
+    if inv_two_hubble is None:
+        safe_eta = torch.where(eta == 0.0, torch.ones_like(eta), eta)
+        inv_two_hubble = p * (1.0 + eta.square()) / (2.0 * safe_eta)
+        singular = eta == 0.0
+    else:
+        singular = hubble == 0.0
     ratio = torch.where(
-        eta == 0.0,
+        singular,
         torch.zeros_like(eta).expand_as(one_minus_c2),
-        one_minus_c2 * p * (1.0 + eta.square()) / (2.0 * safe_eta),
+        one_minus_c2 * inv_two_hubble,
     )
     m_cal = (ratio - 0.5 * c2 * k2) * (1.0 + 2.0 * f1) / (1.0 + 6.0 * f1)
 

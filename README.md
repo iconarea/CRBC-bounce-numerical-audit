@@ -7,13 +7,13 @@ Reproducibility package for:
 
 Author: Ho Hyung Kim, Independent Researcher, Seoul, Republic of Korea.
 
-Latest archived preprint (v1.2): [10.5281/zenodo.21813977](https://doi.org/10.5281/zenodo.21813977)
+Latest archived preprint (v1.2): [10.5281/zenodo.21813977](https://doi.org/10.5281/zenodo.21813977). Version 1.3 is the current source release and will receive its DOI when the Zenodo record is published.
 
 ## Scope
 
-This is a numerical verification of selected consequences of a phenomenological
-bounce ansatz. It is **not** a validated quantum-gravity theory, a derivation
-of a CRBC-specific covariant action, or an analysis of observed CMB maps.
+This is a numerical audit of selected consequences of a phenomenological bounce
+ansatz. It is **not** a validated quantum-gravity theory, a derivation of a
+CRBC-specific covariant action, or an analysis of observed CMB maps.
 
 The package documents:
 
@@ -23,20 +23,46 @@ The package documents:
 - exclusion of a minimal single-field k-essence route;
 - a blue single-field adiabatic spectrum and the requirements of an added
   entropic sector;
+- re-integration of the scalar and entropy spectra on a derived
+  energy-transfer background;
+- explicit negative results for the tested thermal Hagedorn, conformal-coupling,
+  and background-reconstruction routes; and
+- a kinetic-dependent derivative-coupling proxy, retained only as a candidate
+  pending a variational derivation and a complete perturbative stability audit;
 - simulation-only tests of a perturbative Bianchi-I quadrupole estimator.
 
 ## What remains required
 
-1. Derive one covariant beyond-Horndeski/DHOST action for the $w(t)$ profile and
-   verify its background and perturbation equations independently.
-2. Derive the EFT cutoff and examine strong coupling and non-linear Bianchi-I
-   stability.
-3. Supply reheating, amplitude normalization, and any black-hole-interior
+1. Derive a covariant, degenerate action for the specific $w(t)$ profile by
+   varying the full action, rather than reconstructing a supplied background.
+2. Establish DHOST degeneracy and derive the scalar and tensor quadratic
+   actions, including $Q_s$, $c_s^2$, $Q_T$, and $c_T^2$.
+3. Derive the EFT cutoff and test strong coupling where the candidate proxy has
+   $1+\nu\rho_2\sim10^3$, as well as non-linear Bianchi-I stability.
+4. Supply reheating, amplitude normalization, and any black-hole-interior
    matching conditions.
-4. Run a blinded, likelihood-based analysis of actual CMB maps after completing
+5. Run a blinded, likelihood-based analysis of actual CMB maps after completing
   realistic foreground, mask, and polarization validation.
 
-## Revision 2026-08-06 — sub-Planck transition scale
+## Version 1.3 — derived-background and covariant-action audit
+
+Version 1.3 makes the manuscript more falsifiable by preserving negative and
+inconclusive results instead of treating the supplied fluid profile as a field
+theory. On the derived energy-transfer background, the adiabatic result becomes
+more strongly blue ($n_s=4.54$, versus $3.34$ for the earlier tanh background).
+The entropy mechanism remains numerically available, but its central tuning
+must be recalibrated for that background. The tested local thermal Hagedorn
+production route, a canonical-scalar conformal coupling, and a
+beyond-Horndeski background reconstruction do not provide a covariant origin
+for the transition. The remaining derivative-coupling calculation is a
+background-level proxy only: its equations have not been obtained by varying a
+complete covariant action, and its DHOST, perturbative-stability, and
+strong-coupling tests have deliberately not been claimed.
+
+See [the v1.3 English revision record](REVISION_2026-08-06_v1.3_en.md) and
+[its Korean counterpart](REVISION_2026-08-06_v1.3_kr.md).
+
+## Version 1.2 — sub-Planck transition scale
 
 The direct Hagedorn/string-density identification is rejected by the declared
 EFT-control gate: \(\max(E_{\rm char}/\Lambda)=0.519\), above the 0.1
@@ -74,5 +100,5 @@ is from [Planck 2018 X](https://arxiv.org/abs/1807.06211).
 
 ## Citation and license
 
-This release is licensed under [CC BY 4.0](LICENSE). Cite v1.2,
-[10.5281/zenodo.21813977](https://doi.org/10.5281/zenodo.21813977).
+This release is licensed under [CC BY 4.0](LICENSE). Until the v1.3 DOI is
+registered, cite v1.2, [10.5281/zenodo.21813977](https://doi.org/10.5281/zenodo.21813977).

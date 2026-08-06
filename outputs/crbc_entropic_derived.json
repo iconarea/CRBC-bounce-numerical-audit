@@ -1,0 +1,79 @@
+{
+  "purpose": "quantify what the entropic mechanism requires of the gated CRBC background",
+  "background": "CRBC_EFT_선정과_계수계약_kr.md §7.3 realization, held fixed",
+  "ansatz": "m_eff^2 = -lambda H^2 for the entropy direction; equivalent to a^2 m^2 = -mu/tau^2 with mu = lambda beta^2 during ekpyrotic contraction",
+  "beta": 0.14285714285714285,
+  "device": "cuda",
+  "grid": {
+    "extent": 16000.0,
+    "rk4_steps": 100000,
+    "modes": 96,
+    "t_eval": 9.237638145
+  },
+  "requirement": {
+    "lambda_for_exact_scale_invariance": 104.00000000000001,
+    "lambda_for_planck_n_s": 106.59494212250002,
+    "lambda_tolerance_at_planck_1sigma": 0.31231179,
+    "fractional_tuning": 0.0029298931429700297,
+    "planck_n_s": 0.9649,
+    "planck_n_s_sigma": 0.0042
+  },
+  "lambda_scan": [
+    {
+      "lambda": 79.94620659187501,
+      "measured_n_s_minus_one": 0.32728813829812214,
+      "analytic_n_s_minus_one": 0.34737393741444134,
+      "difference": -0.020085799116319192,
+      "fitted_modes": 25,
+      "max_abs_log_residual": 0.008329153733118488
+    },
+    {
+      "lambda": 93.27057435718751,
+      "measured_n_s_minus_one": 0.12990784646710032,
+      "analytic_n_s_minus_one": 0.14971430923949614,
+      "difference": -0.01980646277239581,
+      "fitted_modes": 23,
+      "max_abs_log_residual": 0.00827585380752538
+    },
+    {
+      "lambda": 106.59494212250002,
+      "measured_n_s_minus_one": -0.05533112316198676,
+      "analytic_n_s_minus_one": -0.03509999999999991,
+      "difference": -0.02023112316198685,
+      "fitted_modes": 22,
+      "max_abs_log_residual": 0.005974521255616594
+    },
+    {
+      "lambda": 119.91930988781252,
+      "measured_n_s_minus_one": -0.22927067821286934,
+      "analytic_n_s_minus_one": -0.20928894009964738,
+      "difference": -0.01998173811322196,
+      "fitted_modes": 21,
+      "max_abs_log_residual": 0.005928131400942505
+    },
+    {
+      "lambda": 133.24367765312502,
+      "measured_n_s_minus_one": -0.39336779177689774,
+      "analytic_n_s_minus_one": -0.37449833191421744,
+      "difference": -0.018869459862680293,
+      "fitted_modes": 20,
+      "max_abs_log_residual": 0.00516479833326855
+    }
+  ],
+  "validation": {
+    "max_abs_difference_measured_vs_analytic": 0.02023112316198685,
+    "grid_convergence_at_planck_lambda": 0.0002784292369406888
+  },
+  "single_field_comparison": {
+    "adiabatic_n_s_minus_one": 3.5411,
+    "note": "the adiabatic mode of the same background, from crbc_primordial_spectrum.py; background-dependent, so it must be supplied with --adiabatic-n-s-minus-one"
+  },
+  "not_claimed": [
+    "The entropy field is added by hand, not derived from CRBC microphysics.",
+    "Its sound speed is set to 1.",
+    "The conversion zeta = kappa * delta_s has a free efficiency, so the amplitude is not predicted.",
+    "A scale-invariant Gaussian component is not the coherent relic; that remains separate."
+  ],
+  "gpu_name": "NVIDIA RTX A2000 12GB",
+  "peak_allocated_mb": 58.32177734375
+}

@@ -1,0 +1,85 @@
+{
+  "discriminates": false,
+  "cases": [
+    {
+      "name": "(a) derived background (section 13)",
+      "claimed": true,
+      "p_start": 8.0,
+      "p_end": 1.5,
+      "viable_subluminal": 4611,
+      "viable_subluminal_fraction": 0.061868534396006925,
+      "best_margin": 0.0925788482243595,
+      "best_parameters": {
+        "k1": 7.5,
+        "k2": -6.0,
+        "tau1": 26.833333333333336,
+        "tau2_sq": 6.749999999999999
+      },
+      "candidates": 74529
+    },
+    {
+      "name": "(b) prescribed forward  w: 4.33 -> 0",
+      "claimed": true,
+      "p_start": 7.999999998770334,
+      "p_end": 7.999999998770334,
+      "viable_subluminal": 0,
+      "viable_subluminal_fraction": 0.0,
+      "best_margin": -1.665558665721973,
+      "best_parameters": {
+        "k1": 25.0,
+        "k2": -15.0,
+        "tau1": 40.0,
+        "tau2_sq": 3.425
+      },
+      "candidates": 74529
+    },
+    {
+      "name": "(c) prescribed reversed w: 0 -> 4.33",
+      "claimed": false,
+      "p_start": 1.5000240315744278,
+      "p_end": 1.500024031574441,
+      "viable_subluminal": 158,
+      "viable_subluminal_fraction": 0.002119980141958164,
+      "best_margin": 0.01840465825405171,
+      "best_parameters": {
+        "k1": 20.0,
+        "k2": -13.5,
+        "tau1": 40.0,
+        "tau2_sq": 3.425
+      },
+      "candidates": 74529
+    },
+    {
+      "name": "(d) constant w = 4.33 (no transition)",
+      "claimed": false,
+      "p_start": 8.0,
+      "p_end": 8.0,
+      "viable_subluminal": 0,
+      "viable_subluminal_fraction": 0.0,
+      "best_margin": -1.6655908963339914,
+      "best_parameters": {
+        "k1": 25.0,
+        "k2": -15.0,
+        "tau1": 40.0,
+        "tau2_sq": 0.1
+      },
+      "candidates": 74529
+    },
+    {
+      "name": "(e) constant w = 0 (no transition)",
+      "claimed": false,
+      "p_start": 1.5,
+      "p_end": 1.5,
+      "viable_subluminal": 5970,
+      "viable_subluminal_fraction": 0.08010304713601417,
+      "best_margin": 0.19341655982091002,
+      "best_parameters": {
+        "k1": 0.0,
+        "k2": 0.0,
+        "tau1": 0.5,
+        "tau2_sq": 6.749999999999999
+      },
+      "candidates": 74529
+    }
+  ]
+}
